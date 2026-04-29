@@ -3230,8 +3230,7 @@ body{
     </div>
   </div>
 
-  <!-- ============ GEOGRAPHY · SETUP & FY30 OPERATING INVESTMENT ============ -->
-<!-- ============ GEOGRAPHY · SETUP & FY30 OPERATING INVESTMENT ============ -->
+ <!-- ============ GEOGRAPHY · SETUP & FY30 OPERATING INVESTMENT ============ -->
 <div class="card" style="margin-top:22px;padding:22px 24px 18px;position:relative;">
   <div style="position:absolute;top:16px;right:20px;font-size:9.5px;color:var(--mute-2);letter-spacing:.1em;text-transform:uppercase;font-weight:700;">Directional</div>
 
@@ -3243,7 +3242,6 @@ body{
     <div class="section-key"><div class="section-key-dot"></div><div>Regional org reaches <strong>~74 incremental FTEs</strong> at FY30 across country GMs, local sales, language support, and reseller managers. <a href="javascript:void(0);" onclick="document.getElementById('geoOrgSummary').classList.toggle('open');this.textContent=document.getElementById('geoOrgSummary').classList.contains('open')?'hide org breakdown':'see regional org breakdown';" style="color:var(--lever-geo);text-decoration:none;border-bottom:1px dotted var(--lever-geo);font-weight:600;cursor:pointer;">see regional org breakdown</a></div></div>
   </div>
 
-  <!-- Collapsible cost summary -->
   <div id="geoCostSummary" class="collapsible-inline" style="max-height:0;overflow:hidden;transition:max-height .35s ease;">
     <div class="calc-block" style="margin-top:0;margin-bottom:18px;">
       <div class="calc-block-h">Per-market investment summary (₹ Cr)</div>
@@ -3251,22 +3249,22 @@ body{
         <thead>
           <tr>
             <th>Market</th>
-            <th style="text-align:right;">Setup cost (one-time)</th>
-            <th style="text-align:right;">FY30 operating cost (annual)</th>
+            <th style="text-align:right;">Setup (one-time)</th>
+            <th style="text-align:right;">FY30 op (annual)</th>
+            <th>Largest cost line</th>
           </tr>
         </thead>
         <tbody>
-         <tr><td><strong>🇦🇪 UAE · Deepen &amp; migrate</strong></td><td style="text-align:right;cursor:help;" title="Setup covers Peppol ASP accreditation, Arabic UI completion, migration tooling for existing UAE base, and channel enablement for the reseller network. Leanest setup of the three because the UAE reseller footprint already exists.">10.0</td><td style="text-align:right;cursor:help;" title="FY30 operating covers regional team (~21 FTEs at country GM, sales, support, channel, localisation eng), ongoing localisation maintenance, Peppol ASP renewal, sustaining marketing, and country-specific cloud.">18.0</td></tr>
-<tr><td><strong>🇸🇦 KSA · Enter</strong></td><td style="text-align:right;cursor:help;" title="Setup covers ZATCA Phase 2 certification across Waves 23 and 24, Arabic RTL UI completion (most uncertain scope item), greenfield reseller network build, and launch GTM through KSA Chamber and Big-4 partnerships. Highest setup of the three.">14.0</td><td style="text-align:right;cursor:help;" title="FY30 operating covers regional team (~27 FTEs, the largest of the three because Wave 24 expansion creates the broadest SME pool), annual ZATCA accreditation renewal, Arabic-language support and CS, ongoing reseller management, and sustaining marketing.">22.0</td></tr>
-<tr><td><strong>🇮🇩 Indonesia · Enter</strong></td><td style="text-align:right;cursor:help;" title="Setup covers CoreTax integration, Bahasa UI localisation, reseller-led GTM build through reseller LOI execution rather than direct sales force, and Big-4 tax-firm partnership setup. Mid-range setup; assumes reseller-led entry rather than greenfield direct sales.">12.0</td><td style="text-align:right;cursor:help;" title="FY30 operating covers regional team (~26 FTEs, heaviest on reseller channel and localisation engineering because Indonesia is reseller-led), ongoing CoreTax compliance maintenance, Bahasa support, sustaining demand gen via tax-firm partnerships, and country-specific cloud.">20.0</td></tr>
-          <tr class="calc-total"><td><strong>Total</strong></td><td style="text-align:right;"><strong>36.0</strong></td><td style="text-align:right;"><strong>60.0</strong></td></tr>
+          <tr><td><strong>🇦🇪 UAE · Deepen &amp; migrate</strong></td><td style="text-align:right;cursor:help;" title="Setup covers Peppol ASP accreditation, Arabic UI completion, migration tooling for existing UAE base, and channel enablement for the reseller network.">10.0</td><td style="text-align:right;cursor:help;" title="FY30 operating covers regional team (~21 FTEs at country GM, sales, support, channel, localisation eng), ongoing localisation maintenance, Peppol ASP renewal, sustaining marketing, and country-specific cloud.">18.0</td><td>Channel enablement, ~40% of setup</td></tr>
+          <tr><td><strong>🇸🇦 KSA · Enter</strong></td><td style="text-align:right;cursor:help;" title="Setup covers ZATCA Phase 2 certification across Waves 23 and 24, Arabic RTL UI completion (most uncertain scope item), greenfield reseller network build, and launch GTM through KSA Chamber and Big-4 partnerships.">14.0</td><td style="text-align:right;cursor:help;" title="FY30 operating covers regional team (~27 FTEs, the largest of the three because Wave 24 expansion creates the broadest SME pool), annual ZATCA accreditation renewal, Arabic-language support and CS, ongoing reseller management, and sustaining marketing.">22.0</td><td>ZATCA certification + Arabic RTL UI, ~50% of setup</td></tr>
+          <tr><td><strong>🇮🇩 Indonesia · Enter</strong></td><td style="text-align:right;cursor:help;" title="Setup covers CoreTax integration, Bahasa UI localisation, reseller-led GTM build through reseller LOI execution rather than direct sales force, and Big-4 tax-firm partnership setup.">12.0</td><td style="text-align:right;cursor:help;" title="FY30 operating covers regional team (~26 FTEs, heaviest on reseller channel and localisation engineering), ongoing CoreTax compliance maintenance, Bahasa support, sustaining demand gen via tax-firm partnerships, and country-specific cloud.">20.0</td><td>CoreTax integration + reseller LOI, ~55% of setup</td></tr>
+          <tr class="calc-total"><td><strong>Total</strong></td><td style="text-align:right;"><strong>36.0</strong></td><td style="text-align:right;"><strong>60.0</strong></td><td><strong>vs ₹220 Cr revenue</strong></td></tr>
         </tbody>
       </table>
-      <div class="calc-notes">Setup is the one-time cost to enter each market — localisation engineering, regulatory certifications, channel build, and launch GTM. FY30 operating cost is the steady-state annual run rate when each market is generating its forecast revenue.</div>
+      <div class="calc-notes">Setup is the one-time cost to enter each market — localisation engineering, regulatory certifications, channel build, and launch GTM. FY30 operating is the steady-state annual run rate covering regional team, ongoing localisation maintenance, certification renewal, regional support, and sustaining marketing. <a href="javascript:void(0);" onclick="document.getElementById('geoCostDeepDives').classList.toggle('open');this.textContent=document.getElementById('geoCostDeepDives').classList.contains('open')?'hide cost-line detail':'see cost-line detail per market';" style="color:var(--lever-geo);text-decoration:none;border-bottom:1px dotted var(--lever-geo);font-weight:600;cursor:pointer;">see cost-line detail per market</a></div>
     </div>
   </div>
 
-  <!-- Collapsible regional org -->
   <div id="geoOrgSummary" class="collapsible-inline" style="max-height:0;overflow:hidden;transition:max-height .35s ease;">
     <div class="calc-block" style="margin-top:0;margin-bottom:18px;background:linear-gradient(135deg,#FAF7F0 0%,#FDFBF5 100%);">
       <div class="calc-block-h">Regional org at FY30 steady state</div>
@@ -3277,25 +3275,151 @@ body{
             <th style="text-align:right;">UAE</th>
             <th style="text-align:right;">KSA</th>
             <th style="text-align:right;">Indonesia</th>
-            <th style="text-align:right;">Total FY30 FTE</th>
+            <th style="text-align:right;">Total FTE</th>
+            <th>How the number is sized</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td style="cursor:help;" title="Country GM plus deputy/ops lead per market. Required to own P&amp;L, regulatory relationships, and country-level execution. Cannot be run remotely from India.">Country GM &amp; ops</td><td style="text-align:right;">2</td><td style="text-align:right;">2</td><td style="text-align:right;">2</td><td style="text-align:right;"><strong>~6</strong></td></tr>
-          <tr><td style="cursor:help;" title="Quota-carrying reps speaking local language. Sized at ~1 rep per ₹8–10 Cr ARR. KSA highest due to Wave 24 SME volume.">Local sales</td><td style="text-align:right;">8</td><td style="text-align:right;">10</td><td style="text-align:right;">8</td><td style="text-align:right;"><strong>~26</strong></td></tr>
-          <tr><td style="cursor:help;" title="CSMs and tier-1/2 support in local language. Required because non-English-speaking SMEs cannot be served by India team.">Local support &amp; CS</td><td style="text-align:right;">5</td><td style="text-align:right;">6</td><td style="text-align:right;">6</td><td style="text-align:right;"><strong>~17</strong></td></tr>
-          <tr><td style="cursor:help;" title="Channel managers building and supporting reseller network. Indonesia heaviest because reseller-led GTM is primary distribution model.">Reseller &amp; channel mgmt</td><td style="text-align:right;">3</td><td style="text-align:right;">4</td><td style="text-align:right;">5</td><td style="text-align:right;"><strong>~12</strong></td></tr>
-          <tr><td style="cursor:help;" title="Engineers maintaining country-specific code paths: tax engine modules, language packs, currency, regulatory format updates.">Localisation engineering</td><td style="text-align:right;">2</td><td style="text-align:right;">3</td><td style="text-align:right;">3</td><td style="text-align:right;"><strong>~8</strong></td></tr>
-          <tr><td style="cursor:help;" title="Local PMM plus tax-firm and trade-body partnership lead per market.">Marketing &amp; partnerships</td><td style="text-align:right;">1</td><td style="text-align:right;">2</td><td style="text-align:right;">2</td><td style="text-align:right;"><strong>~5</strong></td></tr>
-          <tr class="calc-total"><td><strong>Total regional org</strong></td><td style="text-align:right;"><strong>~21</strong></td><td style="text-align:right;"><strong>~27</strong></td><td style="text-align:right;"><strong>~26</strong></td><td style="text-align:right;"><strong>~74</strong></td></tr>
+          <tr><td><strong>Country GM &amp; ops</strong></td><td style="text-align:right;">2</td><td style="text-align:right;">2</td><td style="text-align:right;">2</td><td style="text-align:right;"><strong>~6</strong></td><td>1 GM + 1 ops lead per market for P&amp;L ownership and regulatory relationships</td></tr>
+          <tr><td><strong>Local sales</strong></td><td style="text-align:right;">8</td><td style="text-align:right;">10</td><td style="text-align:right;">8</td><td style="text-align:right;"><strong>~26</strong></td><td>1 rep per ₹8–10 Cr ARR per market<sup class="source-ref" data-src="s19">[19]</sup></td></tr>
+          <tr><td><strong>Local support &amp; CS</strong></td><td style="text-align:right;">5</td><td style="text-align:right;">6</td><td style="text-align:right;">6</td><td style="text-align:right;"><strong>~17</strong></td><td>1 CSM per ₹6–8 Cr ARR, scaled for tax-period workload spikes<sup class="source-ref" data-src="s19">[19]</sup></td></tr>
+          <tr><td><strong>Reseller &amp; channel mgmt</strong></td><td style="text-align:right;">3</td><td style="text-align:right;">4</td><td style="text-align:right;">5</td><td style="text-align:right;"><strong>~12</strong></td><td>Sized to reseller-led GTM intensity; Indonesia heaviest as reseller-led market</td></tr>
+          <tr><td><strong>Localisation engineering</strong></td><td style="text-align:right;">2</td><td style="text-align:right;">3</td><td style="text-align:right;">3</td><td style="text-align:right;"><strong>~8</strong></td><td>2–3 engineers per market for tax modules, language packs, regulatory updates</td></tr>
+          <tr><td><strong>Marketing &amp; partnerships</strong></td><td style="text-align:right;">1</td><td style="text-align:right;">2</td><td style="text-align:right;">2</td><td style="text-align:right;"><strong>~5</strong></td><td>1 PMM + 1 partnership lead per market</td></tr>
+          <tr class="calc-total"><td><strong>Total regional org</strong></td><td style="text-align:right;"><strong>~21</strong></td><td style="text-align:right;"><strong>~27</strong></td><td style="text-align:right;"><strong>~26</strong></td><td style="text-align:right;"><strong>~74</strong></td><td><strong>~1.5% of current 4,950 base</strong></td></tr>
         </tbody>
       </table>
       <div class="calc-notes">International markets cannot be operated from India. Each market needs ground-level GM ownership, local-language sales and support, dedicated channel management, and localisation engineering. Total ~74 FTEs adds approximately 1.5% to Tally's current ~4,950 base for ₹220+ Cr of incremental international revenue at FY30.</div>
     </div>
   </div>
 
+  <div id="geoCostDeepDives" class="collapsible-inline" style="max-height:0;overflow:hidden;transition:max-height .35s ease;">
+
+    <div style="margin-top:18px;margin-bottom:12px;padding:10px 14px;background:#FFF8E7;border-left:3px solid var(--lever-geo);border-radius:4px;font-size:11.5px;color:var(--ink-2);line-height:1.55;font-style:italic;">
+      <strong style="color:var(--navy);font-style:normal;">All figures below are directional ·</strong> ranges reflect honest uncertainty rather than false precision. People cost is sized off a defensible compensation rate card; tools, compliance, and licensing lines are preliminary estimates and require vendor RFPs or certification body confirmation to firm up.
+    </div>
+
+    <div class="adj-rank-card" data-bldcard="uae">
+      <div class="adj-rank-head">
+        <div class="rank r1" style="background:linear-gradient(135deg,#0A6E5A,#0E8A72);">UAE</div>
+        <div><div class="adj-rank-title serif">UAE · Deepen &amp; migrate<small>Setup ₹8–12 Cr · FY30 operating ₹15–22 Cr/yr · existing reseller footprint reduces channel-build cost</small></div></div>
+        <div class="adj-rank-stage">Enter · Reseller-led</div>
+        <div class="adj-rank-toggle">▾</div>
+      </div>
+      <div class="adj-rank-body">
+        <div class="adj-rank-body-inner" style="grid-template-columns:1fr 1fr;">
+          <div style="padding-top:16px;">
+            <div class="detail-h">Setup investment · one-time</div>
+            <table class="calc-tbl" style="font-size:11px;">
+              <thead><tr><th>Category</th><th style="text-align:right;">Range (₹ Cr)</th><th>Why this much</th></tr></thead>
+              <tbody>
+                <tr><td><strong>People</strong></td><td style="text-align:right;">2.0–3.2</td><td style="cursor:help;" title="8 FTE launch team × blended ₹35 LPA fully-loaded (country lead + 2 sales + 2 support + 2 localisation eng + 1 channel) = ₹2.5 Cr. Range reflects ±25% comp variance for AED-denominated GCC market premium.">8 FTE launch team × blended ₹35 LPA = ₹2.5 Cr (Base); +25% range for GCC comp premium<sup class="source-ref" data-src="s18">[18]</sup></td></tr>
+                <tr><td><strong>Tools &amp; infrastructure</strong></td><td style="text-align:right;">1.0–1.5</td><td>Migration tooling for existing UAE base + Arabic UI completion + cloud setup; <em>preliminary, scope dependent on existing migration backlog</em><sup class="source-ref" data-src="s20">[20]</sup></td></tr>
+                <tr><td><strong>Compliance &amp; licensing</strong></td><td style="text-align:right;">1.0–2.0</td><td>Peppol ASP accreditation + UAE FTA certification + SOC 2 maintenance; <em>preliminary, requires Peppol authority confirmation</em><sup class="source-ref" data-src="s23">[23]</sup></td></tr>
+                <tr><td><strong>Go-to-market</strong></td><td style="text-align:right;">4.0–5.3</td><td>Channel enablement and training for existing reseller network + accountant outreach + launch events + content for migration messaging — largest line at ~40% of setup</td></tr>
+                <tr class="calc-total"><td><strong>Setup total</strong></td><td style="text-align:right;"><strong>8.0–12.0</strong></td><td><strong>Base ₹10 Cr · Directional</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="padding-top:16px;">
+            <div class="detail-h">FY30 steady-state operating · ₹ Cr/yr</div>
+            <table class="calc-tbl" style="font-size:11px;">
+              <thead><tr><th>Category</th><th style="text-align:right;">Range (₹ Cr/yr)</th><th>Why this much</th></tr></thead>
+              <tbody>
+                <tr><td><strong>People</strong></td><td style="text-align:right;">7.0–9.5</td><td style="cursor:help;" title="21 FTE × blended ₹38 LPA fully-loaded (country GM + sales + CS + channel + localisation eng + marketing) = ₹8.0 Cr. Higher blended rate than India reflects GCC comp premium.">21 FTE × blended ₹38 LPA = ₹8.0 Cr (Base); GCC comp premium reflected<sup class="source-ref" data-src="s24">[24]</sup></td></tr>
+                <tr><td><strong>Tools &amp; infrastructure</strong></td><td style="text-align:right;">2.0–3.0</td><td>Country-specific cloud + ongoing tooling at FY30 customer scale; <em>preliminary, scales with usage</em></td></tr>
+                <tr><td><strong>Compliance maintenance</strong></td><td style="text-align:right;">0.8–1.2</td><td>Annual Peppol ASP renewal + UAE FTA compliance updates + SOC 2 maintenance</td></tr>
+                <tr><td><strong>Sustaining GTM</strong></td><td style="text-align:right;">5.2–8.3</td><td>Ongoing channel co-marketing + accountant network engagement + content + Tally Education partnerships across UAE</td></tr>
+                <tr class="calc-total"><td><strong>FY30 operating</strong></td><td style="text-align:right;"><strong>15.0–22.0</strong></td><td><strong>Base ₹18 Cr/yr · Directional</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="adj-rank-card" data-bldcard="ksa">
+      <div class="adj-rank-head">
+        <div class="rank r2" style="background:linear-gradient(135deg,#0A6E5A,#0E8A72);">KSA</div>
+        <div><div class="adj-rank-title serif">KSA · Enter<small>Setup ₹12–16 Cr · FY30 operating ₹20–26 Cr/yr · Wave 24 SME volume drives largest org of the three</small></div></div>
+        <div class="adj-rank-stage">Enter · Greenfield</div>
+        <div class="adj-rank-toggle">▾</div>
+      </div>
+      <div class="adj-rank-body">
+        <div class="adj-rank-body-inner" style="grid-template-columns:1fr 1fr;">
+          <div style="padding-top:16px;">
+            <div class="detail-h">Setup investment · one-time</div>
+            <table class="calc-tbl" style="font-size:11px;">
+              <thead><tr><th>Category</th><th style="text-align:right;">Range (₹ Cr)</th><th>Why this much</th></tr></thead>
+              <tbody>
+                <tr><td><strong>People</strong></td><td style="text-align:right;">3.0–4.5</td><td style="cursor:help;" title="10 FTE launch team × blended ₹38 LPA fully-loaded (country lead + 3 sales + 2 support + 2 localisation eng + 2 channel) = ₹3.8 Cr. Range reflects ±25% comp variance for SAR-denominated GCC market premium.">10 FTE launch team × blended ₹38 LPA = ₹3.8 Cr (Base); +25% range for GCC premium<sup class="source-ref" data-src="s18">[18]</sup></td></tr>
+                <tr><td><strong>Tools &amp; infrastructure</strong></td><td style="text-align:right;">2.0–3.0</td><td>Arabic RTL UI completion (largest scope item) + tax engine country module + cloud setup; <em>preliminary, RTL scope is the most uncertain line in the model</em><sup class="source-ref" data-src="s20">[20]</sup></td></tr>
+                <tr><td><strong>Compliance &amp; licensing</strong></td><td style="text-align:right;">4.0–5.5</td><td>ZATCA Phase 2 certification across Waves 23–24 + ZATCA-recognised consultant validation + SOC 2 + Saudi cybersecurity audit; <em>preliminary, requires ZATCA confirmation</em><sup class="source-ref" data-src="s23">[23]</sup></td></tr>
+                <tr><td><strong>Go-to-market</strong></td><td style="text-align:right;">3.0–3.0</td><td>Greenfield reseller network build + KSA Chamber and Big-4 partnership setup + launch events + Arabic content production</td></tr>
+                <tr class="calc-total"><td><strong>Setup total</strong></td><td style="text-align:right;"><strong>12.0–16.0</strong></td><td><strong>Base ₹14 Cr · Directional</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="padding-top:16px;">
+            <div class="detail-h">FY30 steady-state operating · ₹ Cr/yr</div>
+            <table class="calc-tbl" style="font-size:11px;">
+              <thead><tr><th>Category</th><th style="text-align:right;">Range (₹ Cr/yr)</th><th>Why this much</th></tr></thead>
+              <tbody>
+                <tr><td><strong>People</strong></td><td style="text-align:right;">9.5–12.5</td><td style="cursor:help;" title="27 FTE × blended ₹40 LPA fully-loaded (country GM + sales + CS + channel + localisation eng + marketing) = ₹10.8 Cr. Largest regional team of the three because Wave 24 expansion creates broadest SME pool.">27 FTE × blended ₹40 LPA = ₹10.8 Cr (Base); largest regional team<sup class="source-ref" data-src="s24">[24]</sup></td></tr>
+                <tr><td><strong>Tools &amp; infrastructure</strong></td><td style="text-align:right;">2.5–3.5</td><td>Country cloud + ZATCA integration maintenance + Arabic UI ongoing development; <em>preliminary, scales with customer base</em></td></tr>
+                <tr><td><strong>Compliance maintenance</strong></td><td style="text-align:right;">2.0–3.0</td><td>Annual ZATCA accreditation renewal + Saudi cybersecurity audit + SOC 2 + tax-rule subscription feeds</td></tr>
+                <tr><td><strong>Sustaining GTM</strong></td><td style="text-align:right;">6.0–7.0</td><td>Reseller network management + Big-4 partnership co-marketing + Arabic content + KSA Chamber engagement + accountant outreach across Waves 23–24</td></tr>
+                <tr class="calc-total"><td><strong>FY30 operating</strong></td><td style="text-align:right;"><strong>20.0–26.0</strong></td><td><strong>Base ₹22 Cr/yr · Directional</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="adj-rank-card" data-bldcard="indonesia">
+      <div class="adj-rank-head">
+        <div class="rank r3" style="background:linear-gradient(135deg,#0A6E5A,#0E8A72);">ID</div>
+        <div><div class="adj-rank-title serif">Indonesia · Enter<small>Setup ₹10–14 Cr · FY30 operating ₹18–24 Cr/yr · reseller-led entry, lightest direct sales</small></div></div>
+        <div class="adj-rank-stage">Enter · Reseller-led</div>
+        <div class="adj-rank-toggle">▾</div>
+      </div>
+      <div class="adj-rank-body">
+        <div class="adj-rank-body-inner" style="grid-template-columns:1fr 1fr;">
+          <div style="padding-top:16px;">
+            <div class="detail-h">Setup investment · one-time</div>
+            <table class="calc-tbl" style="font-size:11px;">
+              <thead><tr><th>Category</th><th style="text-align:right;">Range (₹ Cr)</th><th>Why this much</th></tr></thead>
+              <tbody>
+                <tr><td><strong>People</strong></td><td style="text-align:right;">2.5–3.5</td><td style="cursor:help;" title="9 FTE launch team × blended ₹33 LPA fully-loaded (country lead + 2 sales + 2 support + 2 localisation eng + 2 channel) = ₹3.0 Cr. Lower blended rate than GCC because Indonesia comp norms align closer to India.">9 FTE launch team × blended ₹33 LPA = ₹3.0 Cr (Base); IDR comp aligned with India<sup class="source-ref" data-src="s18">[18]</sup></td></tr>
+                <tr><td><strong>Tools &amp; infrastructure</strong></td><td style="text-align:right;">1.5–2.5</td><td>Bahasa UI localisation + tax engine Indonesia module + cloud setup; <em>preliminary, scope depends on existing Tally Bahasa coverage</em><sup class="source-ref" data-src="s20">[20]</sup></td></tr>
+                <tr><td><strong>Compliance &amp; licensing</strong></td><td style="text-align:right;">2.5–3.5</td><td>CoreTax integration with DJP + tax-firm certification + SOC 2 + DPDP-equivalent compliance; <em>preliminary, requires DJP confirmation</em><sup class="source-ref" data-src="s23">[23]</sup></td></tr>
+                <tr><td><strong>Go-to-market</strong></td><td style="text-align:right;">3.5–4.5</td><td>Reseller LOI execution and onboarding + Big-4 tax-firm partnership setup + launch through accountant networks + Bahasa content production — largest line at ~30% of setup</td></tr>
+                <tr class="calc-total"><td><strong>Setup total</strong></td><td style="text-align:right;"><strong>10.0–14.0</strong></td><td><strong>Base ₹12 Cr · Directional</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="padding-top:16px;">
+            <div class="detail-h">FY30 steady-state operating · ₹ Cr/yr</div>
+            <table class="calc-tbl" style="font-size:11px;">
+              <thead><tr><th>Category</th><th style="text-align:right;">Range (₹ Cr/yr)</th><th>Why this much</th></tr></thead>
+              <tbody>
+                <tr><td><strong>People</strong></td><td style="text-align:right;">8.5–11.0</td><td style="cursor:help;" title="26 FTE × blended ₹35 LPA fully-loaded (country GM + sales + CS + channel + localisation eng + marketing) = ₹9.1 Cr. Heavier on channel and localisation engineering because reseller-led GTM and ongoing tax format updates from DJP.">26 FTE × blended ₹35 LPA = ₹9.1 Cr (Base); channel-heavy<sup class="source-ref" data-src="s24">[24]</sup></td></tr>
+                <tr><td><strong>Tools &amp; infrastructure</strong></td><td style="text-align:right;">2.0–3.0</td><td>Country cloud + CoreTax integration maintenance + Bahasa UI updates; <em>preliminary, scales with customer base</em></td></tr>
+                <tr><td><strong>Compliance maintenance</strong></td><td style="text-align:right;">1.5–2.5</td><td>Annual DJP CoreTax certification renewal + tax-rule subscription feeds + SOC 2 + DPDP-equivalent maintenance</td></tr>
+                <tr><td><strong>Sustaining GTM</strong></td><td style="text-align:right;">6.0–7.5</td><td>Reseller network management (heaviest of three markets) + Big-4 tax-firm co-marketing + Bahasa content + Chamber and trade-body engagement</td></tr>
+                <tr class="calc-total"><td><strong>FY30 operating</strong></td><td style="text-align:right;"><strong>18.0–24.0</strong></td><td><strong>Base ₹20 Cr/yr · Directional</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
   <div class="consider-note" style="margin-top:18px;">
-    <div class="consider-note-h">Directional · preliminary sizing for partner discussion</div>
+    <div class="consider-note-h">Directional · preliminary sizing for discussion</div>
     <div class="consider-note-t serif">The per-market figures are preliminary directional estimates intended to size the investment envelope, not commitments to specific spend.</div>
     <div class="consider-note-b">Setup figures size the one-time cost to enter each market through localisation, certification, channel build, and launch. FY30 operating figures size the steady-state annual run rate. Final numbers depend on detailed market entry planning, vendor RFPs, and HR validation.</div>
   </div>
@@ -3311,9 +3435,13 @@ body{
     <div class="collapsible-body">
       <div class="collapsible-body-inner">
         <div class="detail-h">Setup cost composition</div>
-        <p class="detail-p">Setup covers four buckets per market: localisation engineering (Arabic RTL UI, Bahasa UI, country tax engine modules, currency and format), regulatory certifications (Peppol ASP, ZATCA accreditation, CoreTax accreditation, country-specific audits), channel build (reseller acquisition, partner enablement, training), and launch GTM (one-time market entry marketing, partnership setup, launch events).</p>
+        <p class="detail-p">Setup covers four buckets per market. Localisation engineering captures Arabic RTL UI, Bahasa UI, country tax engine modules, currency, and format work. Regulatory certifications cover Peppol ASP, ZATCA accreditation, CoreTax accreditation, and country-specific audits. Channel build covers reseller acquisition, partner enablement, and training. Launch GTM covers one-time market entry marketing, partnership setup, and launch events.</p>
         <div class="detail-h">FY30 operating cost composition</div>
         <p class="detail-p">FY30 operating covers six buckets per market: regional team people cost, ongoing localisation maintenance for regulatory update cadence, certification renewal, regional support and customer success, sustaining marketing and channel management, and country-specific cloud and infrastructure.</p>
+        <div class="detail-h">Compensation rate card<sup class="source-ref" data-src="s18">[18]</sup></div>
+        <p class="detail-p">Geography people cost is sized off the same India rate card with regional uplifts. UAE and KSA reflect a 10–15% GCC comp premium for AED- and SAR-denominated talent. Indonesia comp aligns broadly with India. People cost is the most tightly costed line in the geography model.</p>
+        <div class="detail-h">Lines requiring vendor RFP or certification body confirmation</div>
+        <p class="detail-p">Tools and infrastructure, compliance and licensing, and country accreditation costs are preliminary directional estimates. Final figures depend on negotiated cloud rates, certification body fees (Peppol, ZATCA, DJP), and the scope of Arabic RTL UI completion in particular, which is the most uncertain line in the model.</p>
         <div class="detail-h">What this model does NOT assume</div>
         <p class="detail-p">No acquisition of local players. No re-deployment of existing Tally international team beyond the UAE base, which is recognised as the migration starting point. No revenue offset against setup cost. No learning-curve productivity gains across markets.</p>
       </div>
@@ -3321,6 +3449,7 @@ body{
   </div>
 
 </div>
+<style>.collapsible-inline.open{max-height:5000px !important;}</style>
 <!-- ============ END GEOGRAPHY SETUP & FY30 OPERATING ============ -->
 
 </section>
@@ -3609,7 +3738,6 @@ body{
       </div>
     </div>
 
-    <!-- Consolidated org & investment summary · collapsed -->
 <!-- Consolidated org & investment summary · collapsed -->
 <div style="margin-top:18px;">
   <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:var(--surface-3);border:1px solid var(--line);border-left:3px solid var(--lever-vision);border-radius:8px;cursor:pointer;" onclick="document.getElementById('bcConsolidated').classList.toggle('open');this.querySelector('.bc-toggle').textContent=document.getElementById('bcConsolidated').classList.contains('open')?'▴ hide':'▾ show';">
@@ -3635,7 +3763,7 @@ body{
         <div class="section-key">
           <div class="section-key-dot" style="background:var(--lever-vision);"></div>
           <div>
-            Combined FY30 operating cost <strong>~₹260–290 Cr/yr</strong> — comprising <strong>₹172 Cr in product and regional team operating cost</strong> plus <strong>~₹90–120 Cr in GTM and org overhead</strong>; GTM and overhead grows to <strong>~35–40% of total operating cost</strong> as customer-facing org scales, consistent with mature SaaS economics.
+            Combined FY30 operating cost <strong>~₹260–290 Cr/yr</strong> — comprising <strong>₹172 Cr in product and regional team operating cost</strong> plus <strong>~₹90–120 Cr in GTM and org overhead</strong>; GTM and overhead grows to <strong>~35–40% of total operating cost</strong> as customer-facing org scales.
             <a href="javascript:void(0);" onclick="document.getElementById('bcOp').classList.toggle('open');this.textContent=document.getElementById('bcOp').classList.contains('open')?'hide':'see breakdown';" style="color:var(--lever-vision);text-decoration:none;border-bottom:1px dotted var(--lever-vision);font-weight:600;cursor:pointer;">see breakdown</a>
           </div>
         </div>
@@ -3658,6 +3786,7 @@ body{
                 <th>Lever</th>
                 <th style="text-align:right;">Setup cost</th>
                 <th>What it covers</th>
+                <th>What drives the cost</th>
               </tr>
             </thead>
             <tbody>
@@ -3665,16 +3794,19 @@ body{
                 <td><strong>Adjacencies (5)</strong></td>
                 <td style="text-align:right;">97.0</td>
                 <td>Build teams, tools and cloud, vendor licensing, certifications, launch GTM across FSA, Banking, Mobile POS, AI Copilot, Tax engine</td>
+                <td>Build teams + launch GTM, GTM ~50% of setup</td>
               </tr>
               <tr>
                 <td><strong>Geography (3 markets)</strong></td>
                 <td style="text-align:right;">36.0</td>
                 <td>Localisation engineering, regulatory certifications, channel build, launch GTM across UAE, KSA, Indonesia</td>
+                <td>Localisation + ZATCA/CoreTax certification, certification ~40% of setup</td>
               </tr>
               <tr class="calc-total">
                 <td><strong>Total</strong></td>
                 <td style="text-align:right;"><strong>133.0</strong></td>
                 <td><strong>One-time investment to ship and enter both levers</strong></td>
+                <td><strong>~33% of FY30 incremental revenue</strong></td>
               </tr>
             </tbody>
           </table>
@@ -3689,24 +3821,24 @@ body{
               <tr>
                 <th>Cost layer</th>
                 <th style="text-align:right;">FY30 cost</th>
-                <th>Composition</th>
+                <th>What drives the cost</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><strong>Product operating cost (adjacencies)</strong></td>
                 <td style="text-align:right;">112.0</td>
-                <td style="cursor:help;" title="Run team people, ongoing cloud and LLM, vendor and API fees, compliance maintenance, sustaining product GTM, and support tooling across the five adjacencies.">Run team, cloud, LLM API, compliance, sustaining product GTM, support tooling</td>
+                <td style="cursor:help;" title="Run team people, ongoing cloud and LLM, vendor and API fees, compliance maintenance, sustaining product GTM, and support tooling across the five adjacencies.">Run team + cloud + LLM API at FY30 scale; AI Copilot the largest single contributor at ₹40 Cr/yr</td>
               </tr>
               <tr>
                 <td><strong>Regional operating cost (geography)</strong></td>
                 <td style="text-align:right;">60.0</td>
-                <td style="cursor:help;" title="Regional team people, ongoing localisation maintenance, certification renewal, regional support, sustaining country marketing across UAE, KSA, Indonesia.">Regional team, localisation maintenance, country licensing, regional support and marketing</td>
+                <td style="cursor:help;" title="Regional team people, ongoing localisation maintenance, certification renewal, regional support, sustaining country marketing across UAE, KSA, Indonesia.">Country teams + ongoing localisation + certification renewals across UAE, KSA, Indonesia</td>
               </tr>
               <tr>
                 <td><strong>GTM and org overhead</strong></td>
                 <td style="text-align:right;">~90–120</td>
-                <td style="cursor:help;" title="Sales team (~80 FTEs), customer success (~55 FTEs), channel and partnerships (~30 FTEs), marketing (~20 FTEs) headcount cost at the rate card plus associated tools, content, and overhead. Not allocated to any single adjacency or market because these functions serve the portfolio.">Sales, CS, channel, marketing headcount across both levers (~185 FTEs at rate card)</td>
+                <td style="cursor:help;" title="Sales team (~80 FTEs), customer success (~55 FTEs), channel and partnerships (~30 FTEs), marketing (~20 FTEs) headcount cost at the rate card plus associated tools, content, and overhead. Not allocated to any single adjacency or market because these functions serve the portfolio.">~185 sales, CS, channel, marketing FTEs at rate card; not allocated to any single adjacency or market because these functions serve the portfolio</td>
               </tr>
               <tr class="calc-total">
                 <td><strong>Total FY30 operating</strong></td>
@@ -3729,6 +3861,7 @@ body{
                 <th style="text-align:right;">Adjacencies</th>
                 <th style="text-align:right;">Geography</th>
                 <th style="text-align:right;">Total FY30 FTE</th>
+                <th>Sizing logic</th>
               </tr>
             </thead>
             <tbody>
@@ -3737,42 +3870,49 @@ body{
                 <td style="text-align:right;">~52</td>
                 <td style="text-align:right;">—</td>
                 <td style="text-align:right;"><strong>~52</strong></td>
+                <td>70% of 74-FTE adjacencies build team<sup class="source-ref" data-src="s24">[24]</sup></td>
               </tr>
               <tr>
                 <td>Sales</td>
                 <td style="text-align:right;">~80</td>
                 <td style="text-align:right;">~26</td>
                 <td style="text-align:right;"><strong>~106</strong></td>
+                <td>1 rep per ₹4–5 Cr ARR (adjacencies) + 1 rep per ₹8–10 Cr ARR (geography)<sup class="source-ref" data-src="s19">[19]</sup></td>
               </tr>
               <tr>
                 <td>Customer success &amp; support</td>
                 <td style="text-align:right;">~55</td>
                 <td style="text-align:right;">~17</td>
                 <td style="text-align:right;"><strong>~72</strong></td>
+                <td>1 CSM per ₹6–8 Cr ARR scaled for both levers<sup class="source-ref" data-src="s19">[19]</sup></td>
               </tr>
               <tr>
                 <td>Channel &amp; partnerships</td>
                 <td style="text-align:right;">~30</td>
                 <td style="text-align:right;">~12</td>
                 <td style="text-align:right;"><strong>~42</strong></td>
+                <td>Reseller, bank, ASP, Big-4 ties for adjacencies + reseller management for geography</td>
               </tr>
               <tr>
                 <td>Marketing</td>
                 <td style="text-align:right;">~20</td>
                 <td style="text-align:right;">~5</td>
                 <td style="text-align:right;"><strong>~25</strong></td>
+                <td>1 PMM per adjacency + 1 PMM per market plus shared support</td>
               </tr>
               <tr>
                 <td>Country GM &amp; localisation eng</td>
                 <td style="text-align:right;">—</td>
                 <td style="text-align:right;">~14</td>
                 <td style="text-align:right;"><strong>~14</strong></td>
+                <td>Sized in the geography section per market</td>
               </tr>
               <tr class="calc-total">
                 <td><strong>Total</strong></td>
                 <td style="text-align:right;"><strong>~237</strong></td>
                 <td style="text-align:right;"><strong>~74</strong></td>
                 <td style="text-align:right;"><strong>~311</strong></td>
+                <td><strong>~6% of current 4,950 base</strong></td>
               </tr>
             </tbody>
           </table>
