@@ -2470,303 +2470,362 @@ body{
 
   <!-- ============ HEADCOUNT & INVESTMENT MODEL · paste below adj-waterfall ============ -->
 <!-- ============ ADJACENCIES · SETUP & FY30 OPERATING INVESTMENT ============ -->
+<!-- ============ ADJACENCIES · SETUP & FY30 OPERATING INVESTMENT ============ -->
 <div class="card" style="margin-top:22px;padding:22px 24px 18px;position:relative;">
   <div style="position:absolute;top:16px;right:20px;font-size:9.5px;color:var(--mute-2);letter-spacing:.1em;text-transform:uppercase;font-weight:700;">Directional</div>
 
   <div class="chart-title serif">Investment to build &amp; operate the five adjacencies</div>
-  <div class="chart-subtitle">One-time setup cost to launch each adjacency + steady-state FY30 annual operating cost when each adjacency reaches forecast revenue</div>
+  <div class="chart-subtitle">Org development and investment summary · click any line to drill into the supporting detail</div>
 
-  <div class="section-keys adj" style="margin-top:14px;margin-bottom:18px;">
-    <div class="section-key"><div class="section-key-dot"></div><div>Setup investment <strong>₹85–110 Cr</strong> one-time across five adjacencies; FY30 steady-state operating cost <strong>₹100–125 Cr/yr</strong>. <a href="javascript:void(0);" onclick="document.getElementById('adjCostSummary').classList.toggle('open');this.textContent=document.getElementById('adjCostSummary').classList.contains('open')?'hide cost summary':'see cost summary by adjacency';" style="color:var(--lever-adj);text-decoration:none;border-bottom:1px dotted var(--lever-adj);font-weight:600;cursor:pointer;">see cost summary by adjacency</a></div></div>
-    <div class="section-key"><div class="section-key-dot"></div><div>Product build team <strong>~74 FTEs</strong>; total incremental org at FY30 reaches <strong>~265 FTEs</strong> across product, sales, success, channel, marketing, and regional ops. <a href="javascript:void(0);" onclick="document.getElementById('adjOrgSummary').classList.toggle('open');this.textContent=document.getElementById('adjOrgSummary').classList.contains('open')?'hide org breakdown':'see full org breakdown';" style="color:var(--lever-adj);text-decoration:none;border-bottom:1px dotted var(--lever-adj);font-weight:600;cursor:pointer;">see full org breakdown</a></div></div>
+  <!-- ORG DEVELOPMENT TRACK -->
+  <div style="margin-top:18px;margin-bottom:8px;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);">Org development</div>
+
+  <div class="section-keys adj" style="margin-top:0;margin-bottom:14px;">
+    <div class="section-key"><div class="section-key-dot"></div><div>Product build team is <strong>~74 FTEs</strong> across five dedicated product squads. <a href="javascript:void(0);" onclick="document.getElementById('adjBuildDetail').classList.toggle('open');this.textContent=document.getElementById('adjBuildDetail').classList.contains('open')?'hide':'see breakdown';" style="color:var(--lever-adj);text-decoration:none;border-bottom:1px dotted var(--lever-adj);font-weight:600;cursor:pointer;">see breakdown</a></div></div>
+    <div class="section-key"><div class="section-key-dot"></div><div>Total incremental org at FY30 reaches <strong>~265 FTEs</strong> across product, sales, success, channel, marketing, and regional ops — a 5% addition to the current 4,950 base. <a href="javascript:void(0);" onclick="document.getElementById('adjOrgFunc').classList.toggle('open');this.textContent=document.getElementById('adjOrgFunc').classList.contains('open')?'hide':'see breakdown';" style="color:var(--lever-adj);text-decoration:none;border-bottom:1px dotted var(--lever-adj);font-weight:600;cursor:pointer;">see breakdown</a></div></div>
+    <div class="section-key"><div class="section-key-dot"></div><div>Org distributes unevenly across adjacencies — <strong>Banking and AI Copilot heaviest at ~60–65 FTEs each</strong> due to engineering depth and ongoing ML support; <strong>Tax engine leanest at ~30 FTEs</strong> by reusing existing GST architecture. <a href="javascript:void(0);" onclick="document.getElementById('adjOrgByAdj').classList.toggle('open');this.textContent=document.getElementById('adjOrgByAdj').classList.contains('open')?'hide':'see breakdown';" style="color:var(--lever-adj);text-decoration:none;border-bottom:1px dotted var(--lever-adj);font-weight:600;cursor:pointer;">see breakdown</a></div></div>
   </div>
 
-  <!-- Collapsible cost summary table -->
-  <div id="adjCostSummary" class="collapsible-inline" style="max-height:0;overflow:hidden;transition:max-height .35s ease;">
-    <div class="calc-block" style="margin-top:0;margin-bottom:18px;">
-      <div class="calc-block-h">Per-adjacency investment summary (₹ Cr)</div>
+  <!-- Build team breakdown · collapsed -->
+  <div id="adjBuildDetail" class="collapsible-inline" style="max-height:0;overflow:hidden;transition:max-height .35s ease;">
+    <div class="calc-block" style="margin-top:0;margin-bottom:14px;">
+      <div class="calc-block-h">Product build team by adjacency</div>
+      <table class="calc-tbl">
+        <thead><tr><th>Adjacency</th><th style="text-align:right;">Build FTE</th><th style="text-align:right;">Run FTE (steady state)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1 · FSA</strong></td><td style="text-align:right;">16</td><td style="text-align:right;">11</td></tr>
+          <tr><td><strong>2 · Banking</strong></td><td style="text-align:right;">17</td><td style="text-align:right;">12</td></tr>
+          <tr><td><strong>3 · Mobile POS</strong></td><td style="text-align:right;">14</td><td style="text-align:right;">10</td></tr>
+          <tr><td><strong>4 · AI Copilot</strong></td><td style="text-align:right;">16</td><td style="text-align:right;">11</td></tr>
+          <tr><td><strong>5 · Tax engine</strong></td><td style="text-align:right;">11</td><td style="text-align:right;">8</td></tr>
+          <tr class="calc-total"><td><strong>Total</strong></td><td style="text-align:right;"><strong>74</strong></td><td style="text-align:right;"><strong>~52</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="calc-notes">Build is the dedicated team during 12-month MVP cycle. Run is steady-state team after launch at 70% of Build, per Indian SaaS norms. Per-function detail in the deep-dive cards below.</div>
+    </div>
+  </div>
+
+  <!-- Function breakdown · collapsed -->
+  <div id="adjOrgFunc" class="collapsible-inline" style="max-height:0;overflow:hidden;transition:max-height .35s ease;">
+    <div class="calc-block" style="margin-top:0;margin-bottom:14px;background:linear-gradient(135deg,#FAF7F0 0%,#FDFBF5 100%);">
+      <div class="calc-block-h">Full incremental org by function at FY30 steady state</div>
+      <table class="calc-tbl">
+        <thead><tr><th>Function</th><th style="text-align:right;">FY30 FTE</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Product build &amp; run teams</strong></td><td style="text-align:right;"><strong>~52</strong></td><td style="cursor:help;" title="Run team across all five adjacencies post-launch. Continues feature work, regulatory updates, and platform scaling. Sized at 70% of the 74-FTE Build team based on Indian SaaS norms.">Five product teams running and evolving the launched adjacencies</td></tr>
+          <tr><td><strong>Sales</strong> (incremental)</td><td style="text-align:right;"><strong>~80</strong></td><td style="cursor:help;" title="Quota-carrying reps + sales engineers + inside sales for premium SKU motion. Sized at roughly 1 sales FTE per ₹4–5 Cr ARR.">Quota reps for FSA, Banking, AI Copilot premium tiers</td></tr>
+          <tr><td><strong>Customer success</strong></td><td style="text-align:right;"><strong>~55</strong></td><td style="cursor:help;" title="Onboarding specialists, CSMs, technical support for new SKUs. Sized at 1 CSM per ₹6–8 Cr ARR.">Onboarding and ongoing success for new product surface area</td></tr>
+          <tr><td><strong>Channel &amp; partnerships</strong></td><td style="text-align:right;"><strong>~30</strong></td><td style="cursor:help;" title="Reseller enablement, AA TSP partnerships, bank tie-ups, Big-4 tax-firm relationships, Peppol/ZATCA accreditation bodies.">Reseller retraining, bank tie-ups, ASP and tax-firm partnerships</td></tr>
+          <tr><td><strong>Marketing</strong></td><td style="text-align:right;"><strong>~20</strong></td><td style="cursor:help;" title="Product marketing managers per adjacency, content, demand gen, analyst relations.">PMM per adjacency plus content, demand gen, AR</td></tr>
+          <tr><td><strong>Regional ops</strong> (UAE, KSA, Indonesia)</td><td style="text-align:right;"><strong>~30</strong></td><td style="cursor:help;" title="Country GMs, local ops, Arabic/Bahasa support, reseller managers in each priority international market. Detailed in the geography section.">Detailed in geography section</td></tr>
+          <tr class="calc-total"><td><strong>Total</strong></td><td style="text-align:right;"><strong>~265</strong></td><td><strong>~5% addition to current ~4,950 base</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Org-by-adjacency breakdown · collapsed -->
+  <div id="adjOrgByAdj" class="collapsible-inline" style="max-height:0;overflow:hidden;transition:max-height .35s ease;">
+    <div class="calc-block" style="margin-top:0;margin-bottom:14px;">
+      <div class="calc-block-h">Incremental org distribution by adjacency at FY30</div>
       <table class="calc-tbl">
         <thead>
           <tr>
             <th>Adjacency</th>
-            <th style="text-align:right;">Setup cost (one-time)</th>
-            <th style="text-align:right;">FY30 operating cost (annual)</th>
+            <th style="text-align:right;">Product run</th>
+            <th style="text-align:right;">Sales</th>
+            <th style="text-align:right;">CS</th>
+            <th style="text-align:right;">Channel</th>
+            <th style="text-align:right;">Marketing</th>
+            <th style="text-align:right;">Total FY30 FTE</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td><strong>1 · FSA</strong></td><td style="text-align:right;">20.0</td><td style="text-align:right;">16.5</td></tr>
-          <tr><td><strong>2 · Banking</strong></td><td style="text-align:right;">25.0</td><td style="text-align:right;">20.0</td></tr>
-          <tr><td><strong>3 · Mobile POS</strong></td><td style="text-align:right;">17.5</td><td style="text-align:right;">24.0</td></tr>
-          <tr><td><strong>4 · AI Copilot</strong></td><td style="text-align:right;">21.0</td><td style="text-align:right;">40.0</td></tr>
-          <tr><td><strong>5 · Tax engine</strong></td><td style="text-align:right;">13.5</td><td style="text-align:right;">11.5</td></tr>
-          <tr class="calc-total"><td><strong>Total</strong></td><td style="text-align:right;"><strong>97.0</strong></td><td style="text-align:right;"><strong>112.0</strong></td></tr>
+          <tr><td><strong>1 · FSA</strong></td><td style="text-align:right;">11</td><td style="text-align:right;">24</td><td style="text-align:right;">15</td><td style="text-align:right;">5</td><td style="text-align:right;">4</td><td style="text-align:right;"><strong>~59</strong></td></tr>
+          <tr><td><strong>2 · Banking</strong></td><td style="text-align:right;">12</td><td style="text-align:right;">22</td><td style="text-align:right;">14</td><td style="text-align:right;">10</td><td style="text-align:right;">4</td><td style="text-align:right;"><strong>~62</strong></td></tr>
+          <tr><td><strong>3 · Mobile POS</strong></td><td style="text-align:right;">10</td><td style="text-align:right;">16</td><td style="text-align:right;">12</td><td style="text-align:right;">6</td><td style="text-align:right;">5</td><td style="text-align:right;"><strong>~49</strong></td></tr>
+          <tr><td><strong>4 · AI Copilot</strong></td><td style="text-align:right;">11</td><td style="text-align:right;">14</td><td style="text-align:right;">10</td><td style="text-align:right;">5</td><td style="text-align:right;">4</td><td style="text-align:right;"><strong>~64</strong></td></tr>
+          <tr><td><strong>5 · Tax engine</strong></td><td style="text-align:right;">8</td><td style="text-align:right;">4</td><td style="text-align:right;">4</td><td style="text-align:right;">4</td><td style="text-align:right;">3</td><td style="text-align:right;"><strong>~31</strong></td></tr>
+          <tr><td style="font-style:italic;color:var(--mute);">Regional ops (geography)</td><td style="text-align:right;">—</td><td style="text-align:right;">—</td><td style="text-align:right;">—</td><td style="text-align:right;">—</td><td style="text-align:right;">—</td><td style="text-align:right;"><strong>~30</strong></td></tr>
+          <tr class="calc-total"><td><strong>Total</strong></td><td style="text-align:right;"><strong>~52</strong></td><td style="text-align:right;"><strong>~80</strong></td><td style="text-align:right;"><strong>~55</strong></td><td style="text-align:right;"><strong>~30</strong></td><td style="text-align:right;"><strong>~20</strong></td><td style="text-align:right;"><strong>~265</strong></td></tr>
         </tbody>
       </table>
-      <div class="calc-notes">Setup is the one-time cost to ship each adjacency to launch readiness. FY30 operating cost is the steady-state annual run rate when each adjacency is generating its forecast revenue. Detailed cost lines and derivations sit in the per-adjacency cards below.</div>
+      <div class="calc-notes">AI Copilot heaviest because ML support and premium-tier customer success scale faster than other adjacencies. Banking second-heaviest due to engineering depth across 10+ bank integrations. Tax engine leanest because the architecture reuses existing GST infrastructure and target customer base is premium-only.</div>
     </div>
   </div>
 
-  <!-- Collapsible full incremental org table -->
-  <div id="adjOrgSummary" class="collapsible-inline" style="max-height:0;overflow:hidden;transition:max-height .35s ease;">
-    <div class="calc-block" style="margin-top:0;margin-bottom:18px;background:linear-gradient(135deg,#FAF7F0 0%,#FDFBF5 100%);">
-      <div class="calc-block-h">Full incremental org at FY30 steady state</div>
+  <!-- INVESTMENT TRACK -->
+  <div style="margin-top:22px;margin-bottom:8px;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);">Investment</div>
+
+  <div class="section-keys adj" style="margin-top:0;margin-bottom:14px;">
+    <div class="section-key"><div class="section-key-dot"></div><div>One-time setup investment to ship all five adjacencies to launch readiness totals <strong>₹85–110 Cr</strong>. <a href="javascript:void(0);" onclick="document.getElementById('adjSetupDetail').classList.toggle('open');this.textContent=document.getElementById('adjSetupDetail').classList.contains('open')?'hide':'see breakdown';" style="color:var(--lever-adj);text-decoration:none;border-bottom:1px dotted var(--lever-adj);font-weight:600;cursor:pointer;">see breakdown</a></div></div>
+    <div class="section-key"><div class="section-key-dot"></div><div>FY30 product operating cost <strong>₹100–125 Cr/yr</strong> — <strong>AI Copilot disproportionately heavy at ~36% of total</strong> because of LLM inference cost at scale; <strong>Tax engine the lightest at ~10%</strong>. GTM and org overhead is shown separately in the consolidated view. <a href="javascript:void(0);" onclick="document.getElementById('adjOpDetail').classList.toggle('open');this.textContent=document.getElementById('adjOpDetail').classList.contains('open')?'hide':'see breakdown';" style="color:var(--lever-adj);text-decoration:none;border-bottom:1px dotted var(--lever-adj);font-weight:600;cursor:pointer;">see breakdown</a></div></div>
+    <div class="section-key"><div class="section-key-dot"></div><div>Detailed cost-line build-up by adjacency available for inspection — every line carries a derivation tooltip on hover. <a href="javascript:void(0);" onclick="document.getElementById('adjDeepDives').classList.toggle('open');this.textContent=document.getElementById('adjDeepDives').classList.contains('open')?'hide':'see deep dives';" style="color:var(--lever-adj);text-decoration:none;border-bottom:1px dotted var(--lever-adj);font-weight:600;cursor:pointer;">see deep dives</a></div></div>
+  </div>
+
+  <!-- Setup breakdown · collapsed -->
+  <div id="adjSetupDetail" class="collapsible-inline" style="max-height:0;overflow:hidden;transition:max-height .35s ease;">
+    <div class="calc-block" style="margin-top:0;margin-bottom:14px;">
+      <div class="calc-block-h">Per-adjacency setup investment (₹ Cr, one-time)</div>
       <table class="calc-tbl">
-        <thead>
-          <tr>
-            <th>Function</th>
-            <th style="text-align:right;">FY30 FTE</th>
-            <th>What this function does (hover for detail)</th>
-          </tr>
-        </thead>
+        <thead><tr><th>Adjacency</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th></tr></thead>
         <tbody>
-          <tr><td><strong>Product build &amp; run teams</strong></td><td style="text-align:right;"><strong>~52</strong></td><td style="cursor:help;" title="Run team across all five adjacencies post-launch. Continues feature work, regulatory updates, and platform scaling. Sized at 70% of the 74-FTE Build team based on Indian SaaS norms.">Five product teams running and evolving the launched adjacencies</td></tr>
-          <tr><td><strong>Sales</strong> (incremental)</td><td style="text-align:right;"><strong>~80</strong></td><td style="cursor:help;" title="Quota-carrying reps + sales engineers + inside sales for premium SKU motion. Sized at roughly 1 sales FTE per ₹4–5 Cr ARR.">Quota reps for FSA, Banking, AI Copilot premium tiers</td></tr>
-          <tr><td><strong>Customer success</strong> (incremental)</td><td style="text-align:right;"><strong>~55</strong></td><td style="cursor:help;" title="Onboarding specialists, CSMs, and technical support for new SKUs. Sized at 1 CSM per ₹6–8 Cr ARR.">Onboarding and ongoing success for new product surface area</td></tr>
-          <tr><td><strong>Channel &amp; partnerships</strong> (incremental)</td><td style="text-align:right;"><strong>~30</strong></td><td style="cursor:help;" title="Reseller enablement, AA TSP partnerships, bank tie-ups, Big-4 tax-firm relationships, Peppol/ZATCA accreditation bodies.">Reseller retraining, bank tie-ups, ASP and tax-firm partnerships</td></tr>
-          <tr><td><strong>Marketing</strong> (incremental)</td><td style="text-align:right;"><strong>~20</strong></td><td style="cursor:help;" title="Product marketing managers per adjacency, content, demand gen, analyst relations.">PMM per adjacency plus content, demand gen, AR</td></tr>
-          <tr><td><strong>Regional ops</strong> (UAE, KSA, Indonesia)</td><td style="text-align:right;"><strong>~30</strong></td><td style="cursor:help;" title="Country GMs, local ops, Arabic/Bahasa support, reseller managers in each priority international market. Sized in detail in the Geography section below.">Detailed in geography section below</td></tr>
-          <tr class="calc-total"><td><strong>Total incremental org</strong></td><td style="text-align:right;"><strong>~265</strong></td><td><strong>~5% addition to current ~4,950 base</strong> for ₹400+ Cr incremental revenue</td></tr>
+          <tr><td><strong>1 · FSA</strong></td><td style="text-align:right;">18.0</td><td style="text-align:right;"><strong>20.0</strong></td><td style="text-align:right;">22.0</td></tr>
+          <tr><td><strong>2 · Banking</strong></td><td style="text-align:right;">22.0</td><td style="text-align:right;"><strong>25.0</strong></td><td style="text-align:right;">28.0</td></tr>
+          <tr><td><strong>3 · Mobile POS</strong></td><td style="text-align:right;">15.0</td><td style="text-align:right;"><strong>17.5</strong></td><td style="text-align:right;">20.0</td></tr>
+          <tr><td><strong>4 · AI Copilot</strong></td><td style="text-align:right;">18.0</td><td style="text-align:right;"><strong>21.0</strong></td><td style="text-align:right;">24.5</td></tr>
+          <tr><td><strong>5 · Tax engine</strong></td><td style="text-align:right;">12.0</td><td style="text-align:right;"><strong>13.5</strong></td><td style="text-align:right;">17.0</td></tr>
+          <tr class="calc-total"><td><strong>Total</strong></td><td style="text-align:right;"><strong>85.0</strong></td><td style="text-align:right;"><strong>97.0</strong></td><td style="text-align:right;"><strong>111.5</strong></td></tr>
         </tbody>
       </table>
-      <div class="calc-notes">The 74-FTE product build team is only the smallest part of the picture. Realistic delivery of ₹400 Cr incremental FY30 revenue requires ~265 incremental FTEs at steady state across all functions.</div>
+      <div class="calc-notes">Setup covers the build team people cost, tools and cloud, vendor licensing, certifications and audits, and one-time launch GTM. Detailed cost lines per adjacency available in the deep-dive cards.</div>
     </div>
   </div>
 
-  <div class="consider-note" style="margin-top:18px;">
-    <div class="consider-note-h">Directional · preliminary sizing for partner discussion</div>
-    <div class="consider-note-t serif">The per-adjacency figures below are preliminary directional estimates intended to size the investment envelope, not commitments to specific spend.</div>
-    <div class="consider-note-b">Setup figures size the one-time cost to ship each adjacency to launch readiness; FY30 operating figures size the steady-state annual run rate when each adjacency is generating its forecast revenue. Final numbers depend on detailed launch planning, vendor RFPs, and HR validation. The ranges shown reflect honest uncertainty rather than false precision; hovering any cost line shows the underlying derivation.</div>
+  <!-- Operating breakdown · collapsed -->
+  <div id="adjOpDetail" class="collapsible-inline" style="max-height:0;overflow:hidden;transition:max-height .35s ease;">
+    <div class="calc-block" style="margin-top:0;margin-bottom:14px;">
+      <div class="calc-block-h">Per-adjacency FY30 product operating cost (₹ Cr/yr)</div>
+      <table class="calc-tbl">
+        <thead><tr><th>Adjacency</th><th style="text-align:right;">FY30 op cost (Base)</th><th style="text-align:right;">% of total</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1 · FSA</strong></td><td style="text-align:right;">16.5</td><td style="text-align:right;">15%</td><td>Sustaining GTM and run team</td></tr>
+          <tr><td><strong>2 · Banking</strong></td><td style="text-align:right;">20.0</td><td style="text-align:right;">18%</td><td>AA TSP fees scale with consent volume</td></tr>
+          <tr><td><strong>3 · Mobile POS</strong></td><td style="text-align:right;">24.0</td><td style="text-align:right;">21%</td><td>Heavy sustaining GTM for Tier-2/3 acquisition</td></tr>
+          <tr><td><strong>4 · AI Copilot</strong></td><td style="text-align:right;"><strong>40.0</strong></td><td style="text-align:right;"><strong>36%</strong></td><td><strong>LLM inference + GPU compute at scale</strong></td></tr>
+          <tr><td><strong>5 · Tax engine</strong></td><td style="text-align:right;">11.5</td><td style="text-align:right;">10%</td><td>Lightest — reuses GST architecture</td></tr>
+          <tr class="calc-total"><td><strong>Total</strong></td><td style="text-align:right;"><strong>112.0</strong></td><td style="text-align:right;"><strong>100%</strong></td><td><strong>Product operating cost only</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="calc-notes">This table shows product-team operating cost only — run team, ongoing cloud and LLM, vendor and API fees, compliance maintenance, sustaining GTM, and support tooling. Sales, customer success, channel, marketing, and regional ops headcount cost (~₹90–120 Cr/yr at FY30) is shown separately in the consolidated business case investment view.</div>
+    </div>
   </div>
 
-  <div style="margin-top:22px;">
-    <div class="chart-title serif" style="font-size:13.5px;margin-bottom:6px;">Per-adjacency setup &amp; operating detail</div>
-    <div class="chart-subtitle" style="margin-bottom:12px;">Click any row to expand · headcount and cost lines carry derivation tooltips on hover · figures shown for Base scenario</div>
+  <!-- Deep dives · collapsed -->
+  <div id="adjDeepDives" class="collapsible-inline" style="max-height:0;overflow:hidden;transition:max-height .35s ease;">
+    <div style="margin-top:8px;margin-bottom:18px;">
+      <div class="consider-note" style="margin-bottom:14px;">
+        <div class="consider-note-h">Directional · preliminary sizing for partner discussion</div>
+        <div class="consider-note-t serif">The per-adjacency figures below are preliminary directional estimates intended to size the investment envelope, not commitments to specific spend.</div>
+        <div class="consider-note-b">Setup figures size the one-time cost to ship each adjacency to launch readiness; FY30 operating figures size the steady-state annual run rate. Final numbers depend on detailed launch planning, vendor RFPs, and HR validation. Hovering any cost line shows the underlying derivation.</div>
+      </div>
 
-    <div class="adj-rank-card" data-bldcard="fsa">
-      <div class="adj-rank-head">
-        <div class="rank r1">1</div>
-        <div>
-          <div class="adj-rank-title serif">Financial Statement Analysis<small>Setup ₹20.0 Cr · FY30 operating ₹16.5 Cr/yr</small></div>
+      <div class="adj-rank-card" data-bldcard="fsa">
+        <div class="adj-rank-head">
+          <div class="rank r1">1</div>
+          <div><div class="adj-rank-title serif">Financial Statement Analysis<small>Setup ₹20.0 Cr · FY30 operating ₹16.5 Cr/yr</small></div></div>
+          <div class="adj-rank-stage">Build · In-house</div>
+          <div class="adj-rank-toggle">▾</div>
         </div>
-        <div class="adj-rank-stage">Build · In-house</div>
-        <div class="adj-rank-toggle">▾</div>
-      </div>
-      <div class="adj-rank-body">
-        <div class="adj-rank-body-inner" style="grid-template-columns:1fr 1fr;">
-          <div style="padding-top:16px;">
-            <div class="detail-h">Setup investment (₹ Cr) · one-time</div>
-            <table class="calc-tbl" style="font-size:11px;">
-              <thead><tr><th>Line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th></tr></thead>
-              <tbody>
-                <tr><td style="cursor:help;" title="Build team people cost over 12-month MVP cycle. 16 FTE × fully-loaded rate card: PM 1×₹40L + Eng 6×₹35L + ML 3×₹50L + Design 1×₹30L + QA 2×₹18L + Sec 1×₹40L + BD 1×₹30L + Support 1×₹15L = ₹5.5 Cr. ±20% band reflects comp variance and ramp pacing.">Build team people<sup class="source-ref" data-src="s18">[18]</sup></td><td style="text-align:right;">4.4</td><td style="text-align:right;"><strong>5.5</strong></td><td style="text-align:right;">6.6</td></tr>
-                <tr><td style="cursor:help;" title="AWS compute and storage for ledger queries and analytics workloads (~₹1.0–1.5 Cr); plus dev tooling — GitHub, Jira, Figma, Datadog, Sentry, Slack — at standard SaaS team rates. Public AWS list pricing for 16-person team plus typical SaaS tooling stack.">Tools &amp; cloud<sup class="source-ref" data-src="s20">[20]</sup></td><td style="text-align:right;">1.3</td><td style="text-align:right;"><strong>1.6</strong></td><td style="text-align:right;">2.0</td></tr>
-                <tr><td style="cursor:help;" title="Embedded BI library license — Tableau Embedded ~₹40–80 L/yr or Looker embedded ~₹60–100 L/yr at moderate seat count. Plus ratio and forecasting libraries.">Vendor/API (BI, viz)</td><td style="text-align:right;">0.6</td><td style="text-align:right;"><strong>0.9</strong></td><td style="text-align:right;">1.2</td></tr>
-                <tr><td style="cursor:help;" title="SOC 2 Type II audit ₹15–25 L; DPDP compliance review ₹10–15 L; ISO 27001 prep ₹10–18 L; pen-testing ₹5–10 L. Big-4 and specialist firm rate cards.">SOC 2 + DPDP audit<sup class="source-ref" data-src="s23">[23]</sup></td><td style="text-align:right;">0.5</td><td style="text-align:right;"><strong>0.7</strong></td><td style="text-align:right;">1.0</td></tr>
-                <tr><td style="cursor:help;" title="One-time launch GTM: accountant channel enablement, certification, content for 28K reseller network, launch events, analyst relations, demand gen for premium SKU launch into Tally's existing base.">Launch GTM (one-time)</td><td style="text-align:right;">10.5</td><td style="text-align:right;"><strong>10.5</strong></td><td style="text-align:right;">10.5</td></tr>
-                <tr><td style="cursor:help;" title="Zendesk Suite Enterprise + Pendo in-app guides + customer health tooling. Initial setup and configuration cost.">Support tooling setup</td><td style="text-align:right;">0.7</td><td style="text-align:right;"><strong>0.8</strong></td><td style="text-align:right;">0.7</td></tr>
-                <tr class="calc-total"><td><strong>Setup total</strong></td><td style="text-align:right;"><strong>18.0</strong></td><td style="text-align:right;"><strong>20.0</strong></td><td style="text-align:right;"><strong>22.0</strong></td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div style="padding-top:16px;">
-            <div class="detail-h">FY30 steady-state operating cost (₹ Cr/yr)</div>
-            <table class="calc-tbl" style="font-size:11px;">
-              <thead><tr><th>Line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th></tr></thead>
-              <tbody>
-                <tr><td style="cursor:help;" title="Run team at 70% of Build = 11 FTE × rate card. Steady-state engineering, ML, design, QA, sec, BD, and support carrying the running product.">Run team people<sup class="source-ref" data-src="s24">[24]</sup></td><td style="text-align:right;">3.1</td><td style="text-align:right;"><strong>3.9</strong></td><td style="text-align:right;">4.6</td></tr>
-                <tr><td style="cursor:help;" title="Ongoing AWS compute, storage, observability for production workloads serving the FSA customer base at FY30 scale.">Cloud &amp; infrastructure</td><td style="text-align:right;">1.5</td><td style="text-align:right;"><strong>2.0</strong></td><td style="text-align:right;">2.5</td></tr>
-                <tr><td style="cursor:help;" title="Annual BI library and viz licensing renewal at FY30 seat count.">Vendor/API renewals</td><td style="text-align:right;">1.0</td><td style="text-align:right;"><strong>1.2</strong></td><td style="text-align:right;">1.5</td></tr>
-                <tr><td style="cursor:help;" title="Annual SOC 2 audit, DPDP compliance maintenance, pen-testing renewal.">Compliance maintenance</td><td style="text-align:right;">0.4</td><td style="text-align:right;"><strong>0.5</strong></td><td style="text-align:right;">0.7</td></tr>
-                <tr><td style="cursor:help;" title="Sustaining demand gen, channel co-marketing, ongoing content. Lower than launch GTM because the SKU is established by FY30 and growth shifts to retention plus modest expansion.">Sustaining GTM</td><td style="text-align:right;">7.0</td><td style="text-align:right;"><strong>7.5</strong></td><td style="text-align:right;">8.5</td></tr>
-                <tr><td style="cursor:help;" title="Support tooling renewal plus incremental seats for FY30 customer base.">Support tooling</td><td style="text-align:right;">1.2</td><td style="text-align:right;"><strong>1.4</strong></td><td style="text-align:right;">1.7</td></tr>
-                <tr class="calc-total"><td><strong>FY30 operating</strong></td><td style="text-align:right;"><strong>14.2</strong></td><td style="text-align:right;"><strong>16.5</strong></td><td style="text-align:right;"><strong>19.5</strong></td></tr>
-              </tbody>
-            </table>
+        <div class="adj-rank-body">
+          <div class="adj-rank-body-inner" style="grid-template-columns:1fr 1fr;">
+            <div style="padding-top:16px;">
+              <div class="detail-h">Setup investment (₹ Cr) · one-time</div>
+              <table class="calc-tbl" style="font-size:11px;">
+                <thead><tr><th>Line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th></tr></thead>
+                <tbody>
+                  <tr><td style="cursor:help;" title="Build team people cost over 12-month MVP cycle. 16 FTE × fully-loaded rate card: PM 1×₹40L + Eng 6×₹35L + ML 3×₹50L + Design 1×₹30L + QA 2×₹18L + Sec 1×₹40L + BD 1×₹30L + Support 1×₹15L = ₹5.5 Cr.">Build team people<sup class="source-ref" data-src="s18">[18]</sup></td><td style="text-align:right;">4.4</td><td style="text-align:right;"><strong>5.5</strong></td><td style="text-align:right;">6.6</td></tr>
+                  <tr><td style="cursor:help;" title="AWS compute and storage for ledger queries and analytics workloads (~₹1.0–1.5 Cr); plus dev tooling — GitHub, Jira, Figma, Datadog, Sentry, Slack — at standard SaaS team rates.">Tools &amp; cloud<sup class="source-ref" data-src="s20">[20]</sup></td><td style="text-align:right;">1.3</td><td style="text-align:right;"><strong>1.6</strong></td><td style="text-align:right;">2.0</td></tr>
+                  <tr><td style="cursor:help;" title="Embedded BI library license — Tableau Embedded ~₹40–80 L/yr or Looker embedded ~₹60–100 L/yr at moderate seat count.">Vendor/API (BI, viz)</td><td style="text-align:right;">0.6</td><td style="text-align:right;"><strong>0.9</strong></td><td style="text-align:right;">1.2</td></tr>
+                  <tr><td style="cursor:help;" title="SOC 2 Type II audit ₹15–25 L; DPDP compliance review ₹10–15 L; ISO 27001 prep ₹10–18 L; pen-testing ₹5–10 L.">SOC 2 + DPDP audit<sup class="source-ref" data-src="s23">[23]</sup></td><td style="text-align:right;">0.5</td><td style="text-align:right;"><strong>0.7</strong></td><td style="text-align:right;">1.0</td></tr>
+                  <tr><td style="cursor:help;" title="One-time launch GTM: accountant channel enablement, certification, content for 28K reseller network, launch events, analyst relations, demand gen.">Launch GTM (one-time)</td><td style="text-align:right;">10.5</td><td style="text-align:right;"><strong>10.5</strong></td><td style="text-align:right;">10.5</td></tr>
+                  <tr><td style="cursor:help;" title="Zendesk Suite Enterprise + Pendo in-app guides + customer health tooling.">Support tooling setup</td><td style="text-align:right;">0.7</td><td style="text-align:right;"><strong>0.8</strong></td><td style="text-align:right;">0.7</td></tr>
+                  <tr class="calc-total"><td><strong>Setup total</strong></td><td style="text-align:right;"><strong>18.0</strong></td><td style="text-align:right;"><strong>20.0</strong></td><td style="text-align:right;"><strong>22.0</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="padding-top:16px;">
+              <div class="detail-h">FY30 steady-state operating cost (₹ Cr/yr)</div>
+              <table class="calc-tbl" style="font-size:11px;">
+                <thead><tr><th>Line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th></tr></thead>
+                <tbody>
+                  <tr><td style="cursor:help;" title="Run team at 70% of Build = 11 FTE × rate card.">Run team people<sup class="source-ref" data-src="s24">[24]</sup></td><td style="text-align:right;">3.1</td><td style="text-align:right;"><strong>3.9</strong></td><td style="text-align:right;">4.6</td></tr>
+                  <tr><td style="cursor:help;" title="Ongoing AWS compute, storage, observability for production workloads.">Cloud &amp; infrastructure</td><td style="text-align:right;">1.5</td><td style="text-align:right;"><strong>2.0</strong></td><td style="text-align:right;">2.5</td></tr>
+                  <tr><td style="cursor:help;" title="Annual BI library and viz licensing renewal at FY30 seat count.">Vendor/API renewals</td><td style="text-align:right;">1.0</td><td style="text-align:right;"><strong>1.2</strong></td><td style="text-align:right;">1.5</td></tr>
+                  <tr><td style="cursor:help;" title="Annual SOC 2 audit, DPDP compliance maintenance, pen-testing renewal.">Compliance maintenance</td><td style="text-align:right;">0.4</td><td style="text-align:right;"><strong>0.5</strong></td><td style="text-align:right;">0.7</td></tr>
+                  <tr><td style="cursor:help;" title="Sustaining demand gen, channel co-marketing, ongoing content.">Sustaining GTM</td><td style="text-align:right;">7.0</td><td style="text-align:right;"><strong>7.5</strong></td><td style="text-align:right;">8.5</td></tr>
+                  <tr><td style="cursor:help;" title="Support tooling renewal plus incremental seats for FY30 customer base.">Support tooling</td><td style="text-align:right;">1.2</td><td style="text-align:right;"><strong>1.4</strong></td><td style="text-align:right;">1.7</td></tr>
+                  <tr class="calc-total"><td><strong>FY30 operating</strong></td><td style="text-align:right;"><strong>14.2</strong></td><td style="text-align:right;"><strong>16.5</strong></td><td style="text-align:right;"><strong>19.5</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
+
+      <div class="adj-rank-card" data-bldcard="banking">
+        <div class="adj-rank-head">
+          <div class="rank r2">2</div>
+          <div><div class="adj-rank-title serif">Banking connectivity<small>Setup ₹25.0 Cr · FY30 operating ₹20.0 Cr/yr</small></div></div>
+          <div class="adj-rank-stage">Build · In-house</div>
+          <div class="adj-rank-toggle">▾</div>
+        </div>
+        <div class="adj-rank-body">
+          <div class="adj-rank-body-inner" style="grid-template-columns:1fr 1fr;">
+            <div style="padding-top:16px;">
+              <div class="detail-h">Setup investment (₹ Cr) · one-time</div>
+              <table class="calc-tbl" style="font-size:11px;">
+                <thead><tr><th>Line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th></tr></thead>
+                <tbody>
+                  <tr><td style="cursor:help;" title="17 FTE × rate card: PM 1 + Eng 7 + ML 1 + Design 1 + QA 2 + Sec 2 + BD 2 + Support 1 = ₹5.6 Cr.">Build team people<sup class="source-ref" data-src="s18">[18]</sup></td><td style="text-align:right;">4.5</td><td style="text-align:right;"><strong>5.6</strong></td><td style="text-align:right;">6.7</td></tr>
+                  <tr><td style="cursor:help;" title="AWS for transaction processing infra at higher security tier plus dedicated dev environments per bank integration.">Tools &amp; cloud<sup class="source-ref" data-src="s20">[20]</sup></td><td style="text-align:right;">1.3</td><td style="text-align:right;"><strong>1.7</strong></td><td style="text-align:right;">2.2</td></tr>
+                  <tr><td style="cursor:help;" title="AA TSP integration setup fees ₹40–80 L; UPI gateway integration ₹15–30 L; bank API onboarding fees across 5–10 banks.">AA TSP &amp; bank API setup<sup class="source-ref" data-src="s22">[22]</sup></td><td style="text-align:right;">2.0</td><td style="text-align:right;"><strong>2.7</strong></td><td style="text-align:right;">3.5</td></tr>
+                  <tr><td style="cursor:help;" title="RBI AA framework compliance review; bank cyber security audits per integration; SOC 2, ISO 27001, PCI-DSS lite; pen-testing.">RBI &amp; bank cyber audits<sup class="source-ref" data-src="s23">[23]</sup></td><td style="text-align:right;">1.5</td><td style="text-align:right;"><strong>2.2</strong></td><td style="text-align:right;">3.0</td></tr>
+                  <tr><td style="cursor:help;" title="Bank co-marketing setup, accountant and reseller training, product launch events, analyst relations, demand gen.">Launch GTM (one-time)</td><td style="text-align:right;">11.0</td><td style="text-align:right;"><strong>11.5</strong></td><td style="text-align:right;">11.5</td></tr>
+                  <tr><td style="cursor:help;" title="Zendesk Suite Enterprise plus PagerDuty escalation tooling plus bank integration monitoring.">Support tooling setup</td><td style="text-align:right;">1.7</td><td style="text-align:right;"><strong>1.3</strong></td><td style="text-align:right;">1.1</td></tr>
+                  <tr class="calc-total"><td><strong>Setup total</strong></td><td style="text-align:right;"><strong>22.0</strong></td><td style="text-align:right;"><strong>25.0</strong></td><td style="text-align:right;"><strong>28.0</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="padding-top:16px;">
+              <div class="detail-h">FY30 steady-state operating cost (₹ Cr/yr)</div>
+              <table class="calc-tbl" style="font-size:11px;">
+                <thead><tr><th>Line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th></tr></thead>
+                <tbody>
+                  <tr><td style="cursor:help;" title="Run team at 70% of Build = 12 FTE × rate card.">Run team people<sup class="source-ref" data-src="s24">[24]</sup></td><td style="text-align:right;">3.1</td><td style="text-align:right;"><strong>3.9</strong></td><td style="text-align:right;">4.7</td></tr>
+                  <tr><td style="cursor:help;" title="Ongoing AWS at FY30 transaction volume across all bank integrations.">Cloud &amp; infrastructure</td><td style="text-align:right;">1.8</td><td style="text-align:right;"><strong>2.4</strong></td><td style="text-align:right;">3.0</td></tr>
+                  <tr><td style="cursor:help;" title="AA TSP per-consent fees at FY30 volume of ~50–80 L active consents/yr.">AA TSP &amp; bank API fees</td><td style="text-align:right;">3.5</td><td style="text-align:right;"><strong>4.5</strong></td><td style="text-align:right;">5.5</td></tr>
+                  <tr><td style="cursor:help;" title="Annual RBI compliance review, bank cyber audit renewals, SOC 2 maintenance.">Compliance maintenance</td><td style="text-align:right;">0.7</td><td style="text-align:right;"><strong>1.0</strong></td><td style="text-align:right;">1.3</td></tr>
+                  <tr><td style="cursor:help;" title="Sustaining demand gen and bank co-marketing.">Sustaining GTM</td><td style="text-align:right;">5.5</td><td style="text-align:right;"><strong>6.5</strong></td><td style="text-align:right;">7.5</td></tr>
+                  <tr><td style="cursor:help;" title="Support and escalation tooling for FY30 customer base.">Support tooling</td><td style="text-align:right;">1.4</td><td style="text-align:right;"><strong>1.7</strong></td><td style="text-align:right;">2.0</td></tr>
+                  <tr class="calc-total"><td><strong>FY30 operating</strong></td><td style="text-align:right;"><strong>16.0</strong></td><td style="text-align:right;"><strong>20.0</strong></td><td style="text-align:right;"><strong>24.0</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="adj-rank-card" data-bldcard="mobile">
+        <div class="adj-rank-head">
+          <div class="rank r3">3</div>
+          <div><div class="adj-rank-title serif">Mobile POS<small>Setup ₹17.5 Cr · FY30 operating ₹24.0 Cr/yr</small></div></div>
+          <div class="adj-rank-stage">Build · In-house</div>
+          <div class="adj-rank-toggle">▾</div>
+        </div>
+        <div class="adj-rank-body">
+          <div class="adj-rank-body-inner" style="grid-template-columns:1fr 1fr;">
+            <div style="padding-top:16px;">
+              <div class="detail-h">Setup investment (₹ Cr) · one-time</div>
+              <table class="calc-tbl" style="font-size:11px;">
+                <thead><tr><th>Line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th></tr></thead>
+                <tbody>
+                  <tr><td style="cursor:help;" title="14 FTE × rate card: PM 1 + Eng 6 + ML 0.5 + Design 2 + QA 2 + Sec 0.5 + BD 1 + Support 1 = ₹4.4 Cr.">Build team people<sup class="source-ref" data-src="s18">[18]</sup></td><td style="text-align:right;">3.5</td><td style="text-align:right;"><strong>4.4</strong></td><td style="text-align:right;">5.3</td></tr>
+                  <tr><td style="cursor:help;" title="Mobile cloud backend, App Store accounts, Firebase/Crashlytics, TestFlight.">Mobile dev tools &amp; cloud<sup class="source-ref" data-src="s20">[20]</sup></td><td style="text-align:right;">0.8</td><td style="text-align:right;"><strong>1.0</strong></td><td style="text-align:right;">1.3</td></tr>
+                  <tr><td style="cursor:help;" title="Razorpay/Cashfree gateway setup; UPI integration; initial pilot transaction fees.">Payment gateway setup</td><td style="text-align:right;">0.5</td><td style="text-align:right;"><strong>0.7</strong></td><td style="text-align:right;">0.9</td></tr>
+                  <tr><td style="cursor:help;" title="PCI-DSS lite (SAQ-A) audit; SOC 2 Type II; mobile-app pen-testing; DPDP review.">PCI-DSS + audits<sup class="source-ref" data-src="s23">[23]</sup></td><td style="text-align:right;">0.4</td><td style="text-align:right;"><strong>0.6</strong></td><td style="text-align:right;">0.9</td></tr>
+                  <tr><td style="cursor:help;" title="Channel-led with reseller training; targeted digital and creator launch; field events in Tier-2/3 cities.">Launch GTM (one-time)</td><td style="text-align:right;">9.0</td><td style="text-align:right;"><strong>9.5</strong></td><td style="text-align:right;">10.0</td></tr>
+                  <tr><td style="cursor:help;" title="Intercom/Freshchat in-app support, ticketing, chatbot, knowledge base, reseller portal initial setup.">Support tooling setup</td><td style="text-align:right;">0.8</td><td style="text-align:right;"><strong>1.3</strong></td><td style="text-align:right;">1.6</td></tr>
+                  <tr class="calc-total"><td><strong>Setup total</strong></td><td style="text-align:right;"><strong>15.0</strong></td><td style="text-align:right;"><strong>17.5</strong></td><td style="text-align:right;"><strong>20.0</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="padding-top:16px;">
+              <div class="detail-h">FY30 steady-state operating cost (₹ Cr/yr)</div>
+              <table class="calc-tbl" style="font-size:11px;">
+                <thead><tr><th>Line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th></tr></thead>
+                <tbody>
+                  <tr><td style="cursor:help;" title="Run team at 70% of Build = 10 FTE × rate card.">Run team people<sup class="source-ref" data-src="s24">[24]</sup></td><td style="text-align:right;">2.4</td><td style="text-align:right;"><strong>3.1</strong></td><td style="text-align:right;">3.7</td></tr>
+                  <tr><td style="cursor:help;" title="Ongoing mobile cloud backend at FY30 user volume.">Cloud &amp; infrastructure</td><td style="text-align:right;">1.0</td><td style="text-align:right;"><strong>1.3</strong></td><td style="text-align:right;">1.7</td></tr>
+                  <tr><td style="cursor:help;" title="Per-transaction payment gateway fees at FY30 GTV.">Payment gateway fees</td><td style="text-align:right;">2.0</td><td style="text-align:right;"><strong>2.6</strong></td><td style="text-align:right;">3.5</td></tr>
+                  <tr><td style="cursor:help;" title="Annual PCI-DSS, SOC 2, pen-testing renewals.">Compliance maintenance</td><td style="text-align:right;">0.5</td><td style="text-align:right;"><strong>0.6</strong></td><td style="text-align:right;">0.8</td></tr>
+                  <tr><td style="cursor:help;" title="HIGHEST sustaining GTM of all five adjacencies — Tier-2/3 SMB acquisition requires ongoing spend.">Sustaining GTM (heavy)</td><td style="text-align:right;">11.0</td><td style="text-align:right;"><strong>14.0</strong></td><td style="text-align:right;">17.0</td></tr>
+                  <tr><td style="cursor:help;" title="Support tooling at FY30 user volume.">Support tooling</td><td style="text-align:right;">2.0</td><td style="text-align:right;"><strong>2.4</strong></td><td style="text-align:right;">2.8</td></tr>
+                  <tr class="calc-total"><td><strong>FY30 operating</strong></td><td style="text-align:right;"><strong>18.9</strong></td><td style="text-align:right;"><strong>24.0</strong></td><td style="text-align:right;"><strong>29.5</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="adj-rank-card" data-bldcard="ai">
+        <div class="adj-rank-head">
+          <div class="rank r4">4</div>
+          <div><div class="adj-rank-title serif">AI Copilot<small>Setup ₹21.0 Cr · FY30 operating ₹40.0 Cr/yr · LLM-heavy</small></div></div>
+          <div class="adj-rank-stage">Build · In-house</div>
+          <div class="adj-rank-toggle">▾</div>
+        </div>
+        <div class="adj-rank-body">
+          <div class="adj-rank-body-inner" style="grid-template-columns:1fr 1fr;">
+            <div style="padding-top:16px;">
+              <div class="detail-h">Setup investment (₹ Cr) · one-time</div>
+              <table class="calc-tbl" style="font-size:11px;">
+                <thead><tr><th>Line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th></tr></thead>
+                <tbody>
+                  <tr><td style="cursor:help;" title="16 FTE × rate card with ML premium: PM 1 + Eng 4 + ML 5 + Design 1 + QA 2 + Sec 1 + BD 1 + Support 1 = ₹5.8 Cr.">Build team people<sup class="source-ref" data-src="s18">[18]</sup></td><td style="text-align:right;">4.6</td><td style="text-align:right;"><strong>5.8</strong></td><td style="text-align:right;">7.0</td></tr>
+                  <tr><td style="cursor:help;" title="One-time GPU compute for fine-tuning on Tally ledger corpus; initial inference infrastructure setup; ML ops and observability tooling.">Fine-tuning &amp; ML setup<sup class="source-ref" data-src="s20">[20]</sup></td><td style="text-align:right;">3.5</td><td style="text-align:right;"><strong>4.5</strong></td><td style="text-align:right;">6.0</td></tr>
+                  <tr><td style="cursor:help;" title="Initial LLM API consumption during alpha and beta testing phase before full launch.">Initial LLM testing<sup class="source-ref" data-src="s21">[21]</sup></td><td style="text-align:right;">0.8</td><td style="text-align:right;"><strong>1.0</strong></td><td style="text-align:right;">1.5</td></tr>
+                  <tr><td style="cursor:help;" title="DPDP data-residency audit, AI governance framework setup, SOC 2, AI red-team testing.">DPDP + AI governance<sup class="source-ref" data-src="s23">[23]</sup></td><td style="text-align:right;">0.7</td><td style="text-align:right;"><strong>1.0</strong></td><td style="text-align:right;">1.5</td></tr>
+                  <tr><td style="cursor:help;" title="Premium positioning launch, analyst briefings, AI thought-leadership content, developer relations, launch events.">Launch GTM (one-time)</td><td style="text-align:right;">7.5</td><td style="text-align:right;"><strong>8.0</strong></td><td style="text-align:right;">7.5</td></tr>
+                  <tr><td style="cursor:help;" title="Premium support tooling, feedback-loop tooling for model improvement, user research tooling, usage analytics.">Support tooling setup</td><td style="text-align:right;">0.9</td><td style="text-align:right;"><strong>0.7</strong></td><td style="text-align:right;">1.0</td></tr>
+                  <tr class="calc-total"><td><strong>Setup total</strong></td><td style="text-align:right;"><strong>18.0</strong></td><td style="text-align:right;"><strong>21.0</strong></td><td style="text-align:right;"><strong>24.5</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="padding-top:16px;">
+              <div class="detail-h">FY30 steady-state operating cost (₹ Cr/yr)</div>
+              <table class="calc-tbl" style="font-size:11px;">
+                <thead><tr><th>Line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th></tr></thead>
+                <tbody>
+                  <tr><td style="cursor:help;" title="Run team at 70% of Build = 11 FTE × rate card with ML premium.">Run team people<sup class="source-ref" data-src="s24">[24]</sup></td><td style="text-align:right;">3.3</td><td style="text-align:right;"><strong>4.1</strong></td><td style="text-align:right;">4.9</td></tr>
+                  <tr><td style="cursor:help;" title="HIGHEST cost line of any adjacency. GPU and inference infrastructure at FY30 user volume serving millions of MSME interactions.">GPU/inference cloud (heavy)<sup class="source-ref" data-src="s20">[20]</sup></td><td style="text-align:right;">12.0</td><td style="text-align:right;"><strong>16.0</strong></td><td style="text-align:right;">22.0</td></tr>
+                  <tr><td style="cursor:help;" title="Anthropic Claude Sonnet ~$3/$15 per 1M tokens; OpenAI GPT-4.1 ~$2/$8 per 1M tokens. At FY30 volume of 2M active MSMEs.">LLM API costs at scale<sup class="source-ref" data-src="s21">[21]</sup></td><td style="text-align:right;">9.0</td><td style="text-align:right;"><strong>12.0</strong></td><td style="text-align:right;">17.0</td></tr>
+                  <tr><td style="cursor:help;" title="Annual DPDP audit, AI governance maintenance, AI red-team testing.">Compliance &amp; AI governance</td><td style="text-align:right;">1.0</td><td style="text-align:right;"><strong>1.4</strong></td><td style="text-align:right;">1.8</td></tr>
+                  <tr><td style="cursor:help;" title="Sustaining demand gen for premium AI SKU, channel education, ongoing thought leadership.">Sustaining GTM</td><td style="text-align:right;">4.0</td><td style="text-align:right;"><strong>5.0</strong></td><td style="text-align:right;">6.0</td></tr>
+                  <tr><td style="cursor:help;" title="Premium support tooling, feedback-loop tooling, usage analytics at FY30 customer base.">Support &amp; feedback tooling</td><td style="text-align:right;">1.2</td><td style="text-align:right;"><strong>1.5</strong></td><td style="text-align:right;">1.8</td></tr>
+                  <tr class="calc-total"><td><strong>FY30 operating</strong></td><td style="text-align:right;"><strong>30.5</strong></td><td style="text-align:right;"><strong>40.0</strong></td><td style="text-align:right;"><strong>53.5</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="adj-rank-card" data-bldcard="tax">
+        <div class="adj-rank-head">
+          <div class="rank r5">5</div>
+          <div><div class="adj-rank-title serif">Tax engine<small>Setup ₹13.5 Cr · FY30 operating ₹11.5 Cr/yr</small></div></div>
+          <div class="adj-rank-stage">Build · In-house</div>
+          <div class="adj-rank-toggle">▾</div>
+        </div>
+        <div class="adj-rank-body">
+          <div class="adj-rank-body-inner" style="grid-template-columns:1fr 1fr;">
+            <div style="padding-top:16px;">
+              <div class="detail-h">Setup investment (₹ Cr) · one-time</div>
+              <table class="calc-tbl" style="font-size:11px;">
+                <thead><tr><th>Line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th></tr></thead>
+                <tbody>
+                  <tr><td style="cursor:help;" title="11 FTE × rate card: PM 1 + Eng 4 + ML 1 + Design 0.5 + QA 2 + Sec 1 + BD 1 + Support 0.5 = ₹3.6 Cr.">Build team people<sup class="source-ref" data-src="s18">[18]</sup></td><td style="text-align:right;">2.9</td><td style="text-align:right;"><strong>3.6</strong></td><td style="text-align:right;">4.3</td></tr>
+                  <tr><td style="cursor:help;" title="AWS for tax-rule engine and multi-tenant compliance infrastructure. Lower than other adjacencies because architecture extends existing GST infrastructure.">Tools &amp; cloud<sup class="source-ref" data-src="s20">[20]</sup></td><td style="text-align:right;">1.1</td><td style="text-align:right;"><strong>1.4</strong></td><td style="text-align:right;">1.8</td></tr>
+                  <tr><td style="cursor:help;" title="ZATCA accreditation fees, Peppol ASP authorisation, Indonesia DJP CoreTax accreditation.">Country licensing setup</td><td style="text-align:right;">1.0</td><td style="text-align:right;"><strong>1.5</strong></td><td style="text-align:right;">2.2</td></tr>
+                  <tr><td style="cursor:help;" title="Per-country tax certifications across 3 markets, SOC 2, ISO 27001.">Country tax certifications<sup class="source-ref" data-src="s23">[23]</sup></td><td style="text-align:right;">1.0</td><td style="text-align:right;"><strong>1.5</strong></td><td style="text-align:right;">2.2</td></tr>
+                  <tr><td style="cursor:help;" title="Big-4 tax-firm partnership setup, channel-led launch in UAE/KSA/Indonesia.">Launch GTM (one-time)</td><td style="text-align:right;">4.5</td><td style="text-align:right;"><strong>5.0</strong></td><td style="text-align:right;">6.5</td></tr>
+                  <tr><td style="cursor:help;" title="Tax compliance support tooling, regulatory update notification system.">Support tooling setup</td><td style="text-align:right;">1.5</td><td style="text-align:right;"><strong>0.5</strong></td><td style="text-align:right;">0.0</td></tr>
+                  <tr class="calc-total"><td><strong>Setup total</strong></td><td style="text-align:right;"><strong>12.0</strong></td><td style="text-align:right;"><strong>13.5</strong></td><td style="text-align:right;"><strong>17.0</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="padding-top:16px;">
+              <div class="detail-h">FY30 steady-state operating cost (₹ Cr/yr)</div>
+              <table class="calc-tbl" style="font-size:11px;">
+                <thead><tr><th>Line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th></tr></thead>
+                <tbody>
+                  <tr><td style="cursor:help;" title="Run team at 70% of Build = 8 FTE × rate card.">Run team people<sup class="source-ref" data-src="s24">[24]</sup></td><td style="text-align:right;">2.0</td><td style="text-align:right;"><strong>2.5</strong></td><td style="text-align:right;">3.0</td></tr>
+                  <tr><td style="cursor:help;" title="Ongoing AWS for tax engine plus country test environments.">Cloud &amp; infrastructure</td><td style="text-align:right;">0.7</td><td style="text-align:right;"><strong>0.9</strong></td><td style="text-align:right;">1.1</td></tr>
+                  <tr><td style="cursor:help;" title="Annual ZATCA, Peppol ASP, CoreTax renewals; tax-rule subscription feeds.">Country licensing renewals</td><td style="text-align:right;">1.5</td><td style="text-align:right;"><strong>2.0</strong></td><td style="text-align:right;">2.6</td></tr>
+                  <tr><td style="cursor:help;" title="Annual country tax certification renewals across 3 markets.">Compliance maintenance</td><td style="text-align:right;">1.0</td><td style="text-align:right;"><strong>1.3</strong></td><td style="text-align:right;">1.7</td></tr>
+                  <tr><td style="cursor:help;" title="Sustaining demand gen, Big-4 partnership co-marketing, regional reseller enablement.">Sustaining GTM</td><td style="text-align:right;">3.5</td><td style="text-align:right;"><strong>4.0</strong></td><td style="text-align:right;">4.8</td></tr>
+                  <tr><td style="cursor:help;" title="Support tooling and regulatory notification system at FY30 customer base.">Support tooling</td><td style="text-align:right;">0.6</td><td style="text-align:right;"><strong>0.8</strong></td><td style="text-align:right;">1.0</td></tr>
+                  <tr class="calc-total"><td><strong>FY30 operating</strong></td><td style="text-align:right;"><strong>9.3</strong></td><td style="text-align:right;"><strong>11.5</strong></td><td style="text-align:right;"><strong>14.2</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-    <div class="adj-rank-card" data-bldcard="banking">
-      <div class="adj-rank-head">
-        <div class="rank r2">2</div>
-        <div>
-          <div class="adj-rank-title serif">Banking connectivity<small>Setup ₹25.0 Cr · FY30 operating ₹20.0 Cr/yr</small></div>
-        </div>
-        <div class="adj-rank-stage">Build · In-house</div>
-        <div class="adj-rank-toggle">▾</div>
-      </div>
-      <div class="adj-rank-body">
-        <div class="adj-rank-body-inner" style="grid-template-columns:1fr 1fr;">
-          <div style="padding-top:16px;">
-            <div class="detail-h">Setup investment (₹ Cr) · one-time</div>
-            <table class="calc-tbl" style="font-size:11px;">
-              <thead><tr><th>Line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th></tr></thead>
-              <tbody>
-                <tr><td style="cursor:help;" title="17 FTE × rate card: PM 1 + Eng 7 + ML 1 + Design 1 + QA 2 + Sec 2 + BD 2 + Support 1 = ₹5.6 Cr. ±20% band.">Build team people<sup class="source-ref" data-src="s18">[18]</sup></td><td style="text-align:right;">4.5</td><td style="text-align:right;"><strong>5.6</strong></td><td style="text-align:right;">6.7</td></tr>
-                <tr><td style="cursor:help;" title="AWS for transaction processing infra at higher security tier plus dedicated dev environments per bank integration plus standard SaaS dev tooling. Higher than FSA due to bank-grade isolation requirements.">Tools &amp; cloud<sup class="source-ref" data-src="s20">[20]</sup></td><td style="text-align:right;">1.3</td><td style="text-align:right;"><strong>1.7</strong></td><td style="text-align:right;">2.2</td></tr>
-                <tr><td style="cursor:help;" title="AA TSP integration setup fees ₹40–80 L; UPI gateway integration ₹15–30 L; bank API onboarding fees across 5–10 banks. Indicative rates from vendor case studies.">AA TSP &amp; bank API setup<sup class="source-ref" data-src="s22">[22]</sup></td><td style="text-align:right;">2.0</td><td style="text-align:right;"><strong>2.7</strong></td><td style="text-align:right;">3.5</td></tr>
-                <tr><td style="cursor:help;" title="RBI AA framework compliance review ₹40–60 L; bank cyber security audits per integration ₹10–20 L per bank × 5 banks; SOC 2, ISO 27001, PCI-DSS lite ₹40–70 L; pen-testing ₹20–40 L.">RBI &amp; bank cyber audits<sup class="source-ref" data-src="s23">[23]</sup></td><td style="text-align:right;">1.5</td><td style="text-align:right;"><strong>2.2</strong></td><td style="text-align:right;">3.0</td></tr>
-                <tr><td style="cursor:help;" title="Bank co-marketing setup, accountant and reseller training on banking SKU, product launch events, analyst relations, demand gen.">Launch GTM (one-time)</td><td style="text-align:right;">11.0</td><td style="text-align:right;"><strong>11.5</strong></td><td style="text-align:right;">11.5</td></tr>
-                <tr><td style="cursor:help;" title="Zendesk Suite Enterprise plus PagerDuty escalation tooling plus bank integration monitoring.">Support tooling setup</td><td style="text-align:right;">1.7</td><td style="text-align:right;"><strong>1.3</strong></td><td style="text-align:right;">1.1</td></tr>
-                <tr class="calc-total"><td><strong>Setup total</strong></td><td style="text-align:right;"><strong>22.0</strong></td><td style="text-align:right;"><strong>25.0</strong></td><td style="text-align:right;"><strong>28.0</strong></td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div style="padding-top:16px;">
-            <div class="detail-h">FY30 steady-state operating cost (₹ Cr/yr)</div>
-            <table class="calc-tbl" style="font-size:11px;">
-              <thead><tr><th>Line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th></tr></thead>
-              <tbody>
-                <tr><td style="cursor:help;" title="Run team at 70% of Build = 12 FTE × rate card.">Run team people<sup class="source-ref" data-src="s24">[24]</sup></td><td style="text-align:right;">3.1</td><td style="text-align:right;"><strong>3.9</strong></td><td style="text-align:right;">4.7</td></tr>
-                <tr><td style="cursor:help;" title="Ongoing AWS at FY30 transaction volume across all bank integrations.">Cloud &amp; infrastructure</td><td style="text-align:right;">1.8</td><td style="text-align:right;"><strong>2.4</strong></td><td style="text-align:right;">3.0</td></tr>
-                <tr><td style="cursor:help;" title="AA TSP per-consent fees at FY30 volume of ~50–80 L active consents/yr at ₹0.50–₹2 per consent; bank API consumption.">AA TSP &amp; bank API fees</td><td style="text-align:right;">3.5</td><td style="text-align:right;"><strong>4.5</strong></td><td style="text-align:right;">5.5</td></tr>
-                <tr><td style="cursor:help;" title="Annual RBI compliance review, bank cyber audit renewals, SOC 2 maintenance.">Compliance maintenance</td><td style="text-align:right;">0.7</td><td style="text-align:right;"><strong>1.0</strong></td><td style="text-align:right;">1.3</td></tr>
-                <tr><td style="cursor:help;" title="Sustaining demand gen and bank co-marketing for ongoing customer acquisition.">Sustaining GTM</td><td style="text-align:right;">5.5</td><td style="text-align:right;"><strong>6.5</strong></td><td style="text-align:right;">7.5</td></tr>
-                <tr><td style="cursor:help;" title="Support and escalation tooling for FY30 customer base.">Support tooling</td><td style="text-align:right;">1.4</td><td style="text-align:right;"><strong>1.7</strong></td><td style="text-align:right;">2.0</td></tr>
-                <tr class="calc-total"><td><strong>FY30 operating</strong></td><td style="text-align:right;"><strong>16.0</strong></td><td style="text-align:right;"><strong>20.0</strong></td><td style="text-align:right;"><strong>24.0</strong></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="adj-rank-card" data-bldcard="mobile">
-      <div class="adj-rank-head">
-        <div class="rank r3">3</div>
-        <div>
-          <div class="adj-rank-title serif">Mobile POS<small>Setup ₹17.5 Cr · FY30 operating ₹24.0 Cr/yr</small></div>
-        </div>
-        <div class="adj-rank-stage">Build · In-house</div>
-        <div class="adj-rank-toggle">▾</div>
-      </div>
-      <div class="adj-rank-body">
-        <div class="adj-rank-body-inner" style="grid-template-columns:1fr 1fr;">
-          <div style="padding-top:16px;">
-            <div class="detail-h">Setup investment (₹ Cr) · one-time</div>
-            <table class="calc-tbl" style="font-size:11px;">
-              <thead><tr><th>Line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th></tr></thead>
-              <tbody>
-                <tr><td style="cursor:help;" title="14 FTE × rate card: PM 1 + Eng 6 + ML 0.5 + Design 2 + QA 2 + Sec 0.5 + BD 1 + Support 1 = ₹4.4 Cr.">Build team people<sup class="source-ref" data-src="s18">[18]</sup></td><td style="text-align:right;">3.5</td><td style="text-align:right;"><strong>4.4</strong></td><td style="text-align:right;">5.3</td></tr>
-                <tr><td style="cursor:help;" title="Mobile cloud backend, App Store accounts, Firebase/Crashlytics, TestFlight infrastructure, mobile observability tools.">Mobile dev tools &amp; cloud<sup class="source-ref" data-src="s20">[20]</sup></td><td style="text-align:right;">0.8</td><td style="text-align:right;"><strong>1.0</strong></td><td style="text-align:right;">1.3</td></tr>
-                <tr><td style="cursor:help;" title="Razorpay/Cashfree gateway setup; UPI integration; initial pilot transaction fees.">Payment gateway setup</td><td style="text-align:right;">0.5</td><td style="text-align:right;"><strong>0.7</strong></td><td style="text-align:right;">0.9</td></tr>
-                <tr><td style="cursor:help;" title="PCI-DSS lite (SAQ-A) audit; SOC 2 Type II; mobile-app pen-testing; DPDP review.">PCI-DSS + audits<sup class="source-ref" data-src="s23">[23]</sup></td><td style="text-align:right;">0.4</td><td style="text-align:right;"><strong>0.6</strong></td><td style="text-align:right;">0.9</td></tr>
-                <tr><td style="cursor:help;" title="Channel-led with reseller training and incentives; targeted digital and creator launch; field events in Tier-2/3 cities; launch content and PR.">Launch GTM (one-time)</td><td style="text-align:right;">9.0</td><td style="text-align:right;"><strong>9.5</strong></td><td style="text-align:right;">10.0</td></tr>
-                <tr><td style="cursor:help;" title="Intercom/Freshchat in-app support, ticketing, chatbot, knowledge base, reseller portal initial setup.">Support tooling setup</td><td style="text-align:right;">0.8</td><td style="text-align:right;"><strong>1.3</strong></td><td style="text-align:right;">1.6</td></tr>
-                <tr class="calc-total"><td><strong>Setup total</strong></td><td style="text-align:right;"><strong>15.0</strong></td><td style="text-align:right;"><strong>17.5</strong></td><td style="text-align:right;"><strong>20.0</strong></td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div style="padding-top:16px;">
-            <div class="detail-h">FY30 steady-state operating cost (₹ Cr/yr)</div>
-            <table class="calc-tbl" style="font-size:11px;">
-              <thead><tr><th>Line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th></tr></thead>
-              <tbody>
-                <tr><td style="cursor:help;" title="Run team at 70% of Build = 10 FTE × rate card.">Run team people<sup class="source-ref" data-src="s24">[24]</sup></td><td style="text-align:right;">2.4</td><td style="text-align:right;"><strong>3.1</strong></td><td style="text-align:right;">3.7</td></tr>
-                <tr><td style="cursor:help;" title="Ongoing mobile cloud backend at FY30 user volume.">Cloud &amp; infrastructure</td><td style="text-align:right;">1.0</td><td style="text-align:right;"><strong>1.3</strong></td><td style="text-align:right;">1.7</td></tr>
-                <tr><td style="cursor:help;" title="Per-transaction payment gateway fees at FY30 GTV.">Payment gateway fees</td><td style="text-align:right;">2.0</td><td style="text-align:right;"><strong>2.6</strong></td><td style="text-align:right;">3.5</td></tr>
-                <tr><td style="cursor:help;" title="Annual PCI-DSS, SOC 2, pen-testing renewals.">Compliance maintenance</td><td style="text-align:right;">0.5</td><td style="text-align:right;"><strong>0.6</strong></td><td style="text-align:right;">0.8</td></tr>
-                <tr><td style="cursor:help;" title="HIGHEST sustaining GTM of all five adjacencies because Mobile POS targets a Tier-2/3 segment requiring ongoing acquisition spend.">Sustaining GTM (heavy)</td><td style="text-align:right;">11.0</td><td style="text-align:right;"><strong>14.0</strong></td><td style="text-align:right;">17.0</td></tr>
-                <tr><td style="cursor:help;" title="Support tooling at FY30 user volume.">Support tooling</td><td style="text-align:right;">2.0</td><td style="text-align:right;"><strong>2.4</strong></td><td style="text-align:right;">2.8</td></tr>
-                <tr class="calc-total"><td><strong>FY30 operating</strong></td><td style="text-align:right;"><strong>18.9</strong></td><td style="text-align:right;"><strong>24.0</strong></td><td style="text-align:right;"><strong>29.5</strong></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="adj-rank-card" data-bldcard="ai">
-      <div class="adj-rank-head">
-        <div class="rank r4">4</div>
-        <div>
-          <div class="adj-rank-title serif">AI Copilot<small>Setup ₹21.0 Cr · FY30 operating ₹40.0 Cr/yr · LLM-heavy</small></div>
-        </div>
-        <div class="adj-rank-stage">Build · In-house</div>
-        <div class="adj-rank-toggle">▾</div>
-      </div>
-      <div class="adj-rank-body">
-        <div class="adj-rank-body-inner" style="grid-template-columns:1fr 1fr;">
-          <div style="padding-top:16px;">
-            <div class="detail-h">Setup investment (₹ Cr) · one-time</div>
-            <table class="calc-tbl" style="font-size:11px;">
-              <thead><tr><th>Line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th></tr></thead>
-              <tbody>
-                <tr><td style="cursor:help;" title="16 FTE × rate card with ML premium: PM 1 + Eng 4 + ML 5 + Design 1 + QA 2 + Sec 1 + BD 1 + Support 1 = ₹5.8 Cr.">Build team people<sup class="source-ref" data-src="s18">[18]</sup></td><td style="text-align:right;">4.6</td><td style="text-align:right;"><strong>5.8</strong></td><td style="text-align:right;">7.0</td></tr>
-                <tr><td style="cursor:help;" title="One-time GPU compute for fine-tuning on Tally ledger corpus; initial inference infrastructure setup; ML ops and observability tooling.">Fine-tuning &amp; ML setup<sup class="source-ref" data-src="s20">[20]</sup></td><td style="text-align:right;">3.5</td><td style="text-align:right;"><strong>4.5</strong></td><td style="text-align:right;">6.0</td></tr>
-                <tr><td style="cursor:help;" title="Initial LLM API consumption during alpha and beta testing phase before full launch.">Initial LLM testing<sup class="source-ref" data-src="s21">[21]</sup></td><td style="text-align:right;">0.8</td><td style="text-align:right;"><strong>1.0</strong></td><td style="text-align:right;">1.5</td></tr>
-                <tr><td style="cursor:help;" title="DPDP data-residency audit, AI governance framework setup, SOC 2, AI red-team testing, model card documentation.">DPDP + AI governance<sup class="source-ref" data-src="s23">[23]</sup></td><td style="text-align:right;">0.7</td><td style="text-align:right;"><strong>1.0</strong></td><td style="text-align:right;">1.5</td></tr>
-                <tr><td style="cursor:help;" title="Premium positioning launch, analyst briefings, AI thought-leadership content, developer relations, launch events, demand gen.">Launch GTM (one-time)</td><td style="text-align:right;">7.5</td><td style="text-align:right;"><strong>8.0</strong></td><td style="text-align:right;">7.5</td></tr>
-                <tr><td style="cursor:help;" title="Premium support tooling, feedback-loop tooling for model improvement, user research tooling, usage analytics.">Support tooling setup</td><td style="text-align:right;">0.9</td><td style="text-align:right;"><strong>0.7</strong></td><td style="text-align:right;">1.0</td></tr>
-                <tr class="calc-total"><td><strong>Setup total</strong></td><td style="text-align:right;"><strong>18.0</strong></td><td style="text-align:right;"><strong>21.0</strong></td><td style="text-align:right;"><strong>24.5</strong></td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div style="padding-top:16px;">
-            <div class="detail-h">FY30 steady-state operating cost (₹ Cr/yr)</div>
-            <table class="calc-tbl" style="font-size:11px;">
-              <thead><tr><th>Line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th></tr></thead>
-              <tbody>
-                <tr><td style="cursor:help;" title="Run team at 70% of Build = 11 FTE × rate card with ML premium.">Run team people<sup class="source-ref" data-src="s24">[24]</sup></td><td style="text-align:right;">3.3</td><td style="text-align:right;"><strong>4.1</strong></td><td style="text-align:right;">4.9</td></tr>
-                <tr><td style="cursor:help;" title="HIGHEST cost line of any adjacency. GPU and inference infrastructure at FY30 user volume serving millions of MSME interactions.">GPU/inference cloud (heavy)<sup class="source-ref" data-src="s20">[20]</sup></td><td style="text-align:right;">12.0</td><td style="text-align:right;"><strong>16.0</strong></td><td style="text-align:right;">22.0</td></tr>
-                <tr><td style="cursor:help;" title="Anthropic Claude Sonnet ~$3/$15 per 1M tokens; OpenAI GPT-4.1 ~$2/$8 per 1M tokens. At FY30 volume of 2M active MSMEs × 50–100 calls/month × 1K avg tokens.">LLM API costs at scale<sup class="source-ref" data-src="s21">[21]</sup></td><td style="text-align:right;">9.0</td><td style="text-align:right;"><strong>12.0</strong></td><td style="text-align:right;">17.0</td></tr>
-                <tr><td style="cursor:help;" title="Annual DPDP audit, AI governance maintenance, AI red-team testing, ongoing model card review.">Compliance &amp; AI governance</td><td style="text-align:right;">1.0</td><td style="text-align:right;"><strong>1.4</strong></td><td style="text-align:right;">1.8</td></tr>
-                <tr><td style="cursor:help;" title="Sustaining demand gen for premium AI SKU, channel education, ongoing thought leadership.">Sustaining GTM</td><td style="text-align:right;">4.0</td><td style="text-align:right;"><strong>5.0</strong></td><td style="text-align:right;">6.0</td></tr>
-                <tr><td style="cursor:help;" title="Premium support tooling, feedback-loop tooling, usage analytics at FY30 customer base.">Support &amp; feedback tooling</td><td style="text-align:right;">1.2</td><td style="text-align:right;"><strong>1.5</strong></td><td style="text-align:right;">1.8</td></tr>
-                <tr class="calc-total"><td><strong>FY30 operating</strong></td><td style="text-align:right;"><strong>30.5</strong></td><td style="text-align:right;"><strong>40.0</strong></td><td style="text-align:right;"><strong>53.5</strong></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="adj-rank-card" data-bldcard="tax">
-      <div class="adj-rank-head">
-        <div class="rank r5">5</div>
-        <div>
-          <div class="adj-rank-title serif">Tax engine<small>Setup ₹13.5 Cr · FY30 operating ₹11.5 Cr/yr</small></div>
-        </div>
-        <div class="adj-rank-stage">Build · In-house</div>
-        <div class="adj-rank-toggle">▾</div>
-      </div>
-      <div class="adj-rank-body">
-        <div class="adj-rank-body-inner" style="grid-template-columns:1fr 1fr;">
-          <div style="padding-top:16px;">
-            <div class="detail-h">Setup investment (₹ Cr) · one-time</div>
-            <table class="calc-tbl" style="font-size:11px;">
-              <thead><tr><th>Line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th></tr></thead>
-              <tbody>
-                <tr><td style="cursor:help;" title="11 FTE × rate card: PM 1 + Eng 4 + ML 1 + Design 0.5 + QA 2 + Sec 1 + BD 1 + Support 0.5 = ₹3.6 Cr.">Build team people<sup class="source-ref" data-src="s18">[18]</sup></td><td style="text-align:right;">2.9</td><td style="text-align:right;"><strong>3.6</strong></td><td style="text-align:right;">4.3</td></tr>
-                <tr><td style="cursor:help;" title="AWS for tax-rule engine and multi-tenant compliance infrastructure plus standard SaaS dev tooling. Lower than other adjacencies because architecture extends existing Tally GST infrastructure.">Tools &amp; cloud<sup class="source-ref" data-src="s20">[20]</sup></td><td style="text-align:right;">1.1</td><td style="text-align:right;"><strong>1.4</strong></td><td style="text-align:right;">1.8</td></tr>
-                <tr><td style="cursor:help;" title="ZATCA accreditation fees per phase, Peppol ASP authorisation, Indonesia DJP CoreTax accreditation.">Country licensing setup</td><td style="text-align:right;">1.0</td><td style="text-align:right;"><strong>1.5</strong></td><td style="text-align:right;">2.2</td></tr>
-                <tr><td style="cursor:help;" title="Per-country tax certifications across 3 markets, SOC 2, ISO 27001, ongoing audit setup.">Country tax certifications<sup class="source-ref" data-src="s23">[23]</sup></td><td style="text-align:right;">1.0</td><td style="text-align:right;"><strong>1.5</strong></td><td style="text-align:right;">2.2</td></tr>
-                <tr><td style="cursor:help;" title="Big-4 tax-firm partnership setup, channel-led launch in UAE/KSA/Indonesia, analyst and tax-press relations, country tax authority events.">Launch GTM (one-time)</td><td style="text-align:right;">4.5</td><td style="text-align:right;"><strong>5.0</strong></td><td style="text-align:right;">6.5</td></tr>
-                <tr><td style="cursor:help;" title="Tax compliance support tooling, regulatory update notification system, tax expert escalation tooling.">Support tooling setup</td><td style="text-align:right;">1.5</td><td style="text-align:right;"><strong>0.5</strong></td><td style="text-align:right;">0.0</td></tr>
-                <tr class="calc-total"><td><strong>Setup total</strong></td><td style="text-align:right;"><strong>12.0</strong></td><td style="text-align:right;"><strong>13.5</strong></td><td style="text-align:right;"><strong>17.0</strong></td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div style="padding-top:16px;">
-            <div class="detail-h">FY30 steady-state operating cost (₹ Cr/yr)</div>
-            <table class="calc-tbl" style="font-size:11px;">
-              <thead><tr><th>Line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th></tr></thead>
-              <tbody>
-                <tr><td style="cursor:help;" title="Run team at 70% of Build = 8 FTE × rate card.">Run team people<sup class="source-ref" data-src="s24">[24]</sup></td><td style="text-align:right;">2.0</td><td style="text-align:right;"><strong>2.5</strong></td><td style="text-align:right;">3.0</td></tr>
-                <tr><td style="cursor:help;" title="Ongoing AWS for tax engine plus country test environments at FY30 customer volume.">Cloud &amp; infrastructure</td><td style="text-align:right;">0.7</td><td style="text-align:right;"><strong>0.9</strong></td><td style="text-align:right;">1.1</td></tr>
-                <tr><td style="cursor:help;" title="Annual ZATCA accreditation renewal, Peppol ASP renewal, CoreTax accreditation renewal, tax-rule subscription feeds.">Country licensing renewals</td><td style="text-align:right;">1.5</td><td style="text-align:right;"><strong>2.0</strong></td><td style="text-align:right;">2.6</td></tr>
-                <tr><td style="cursor:help;" title="Annual country tax certification renewals across 3 markets, ongoing audit and compliance updates.">Compliance maintenance</td><td style="text-align:right;">1.0</td><td style="text-align:right;"><strong>1.3</strong></td><td style="text-align:right;">1.7</td></tr>
-                <tr><td style="cursor:help;" title="Sustaining demand gen, Big-4 partnership co-marketing, regional reseller enablement.">Sustaining GTM</td><td style="text-align:right;">3.5</td><td style="text-align:right;"><strong>4.0</strong></td><td style="text-align:right;">4.8</td></tr>
-                <tr><td style="cursor:help;" title="Support tooling and regulatory notification system at FY30 customer base.">Support tooling</td><td style="text-align:right;">0.6</td><td style="text-align:right;"><strong>0.8</strong></td><td style="text-align:right;">1.0</td></tr>
-                <tr class="calc-total"><td><strong>FY30 operating</strong></td><td style="text-align:right;"><strong>9.3</strong></td><td style="text-align:right;"><strong>11.5</strong></td><td style="text-align:right;"><strong>14.2</strong></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
 
   <div class="collapsible-section" style="margin-top:22px;">
@@ -2790,7 +2849,7 @@ body{
   </div>
 
 </div>
-<style>.collapsible-inline.open{max-height:1200px !important;}</style>
+<style>.collapsible-inline.open{max-height:5000px !important;}</style>
 <!-- ============ END ADJACENCIES SETUP & FY30 OPERATING ============ -->
 </section>
 
@@ -3234,9 +3293,9 @@ body{
           </tr>
         </thead>
         <tbody>
-          <tr><td><strong>🇦🇪 UAE · Deepen &amp; migrate</strong></td><td style="text-align:right;">10.0</td><td style="text-align:right;">18.0</td></tr>
-          <tr><td><strong>🇸🇦 KSA · Enter</strong></td><td style="text-align:right;">14.0</td><td style="text-align:right;">22.0</td></tr>
-          <tr><td><strong>🇮🇩 Indonesia · Enter</strong></td><td style="text-align:right;">12.0</td><td style="text-align:right;">20.0</td></tr>
+         <tr><td><strong>🇦🇪 UAE · Deepen &amp; migrate</strong></td><td style="text-align:right;cursor:help;" title="Setup covers Peppol ASP accreditation, Arabic UI completion, migration tooling for existing UAE base, and channel enablement for the reseller network. Leanest setup of the three because the UAE reseller footprint already exists.">10.0</td><td style="text-align:right;cursor:help;" title="FY30 operating covers regional team (~21 FTEs at country GM, sales, support, channel, localisation eng), ongoing localisation maintenance, Peppol ASP renewal, sustaining marketing, and country-specific cloud.">18.0</td></tr>
+<tr><td><strong>🇸🇦 KSA · Enter</strong></td><td style="text-align:right;cursor:help;" title="Setup covers ZATCA Phase 2 certification across Waves 23 and 24, Arabic RTL UI completion (most uncertain scope item), greenfield reseller network build, and launch GTM through KSA Chamber and Big-4 partnerships. Highest setup of the three.">14.0</td><td style="text-align:right;cursor:help;" title="FY30 operating covers regional team (~27 FTEs, the largest of the three because Wave 24 expansion creates the broadest SME pool), annual ZATCA accreditation renewal, Arabic-language support and CS, ongoing reseller management, and sustaining marketing.">22.0</td></tr>
+<tr><td><strong>🇮🇩 Indonesia · Enter</strong></td><td style="text-align:right;cursor:help;" title="Setup covers CoreTax integration, Bahasa UI localisation, reseller-led GTM build through reseller LOI execution rather than direct sales force, and Big-4 tax-firm partnership setup. Mid-range setup; assumes reseller-led entry rather than greenfield direct sales.">12.0</td><td style="text-align:right;cursor:help;" title="FY30 operating covers regional team (~26 FTEs, heaviest on reseller channel and localisation engineering because Indonesia is reseller-led), ongoing CoreTax compliance maintenance, Bahasa support, sustaining demand gen via tax-firm partnerships, and country-specific cloud.">20.0</td></tr>
           <tr class="calc-total"><td><strong>Total</strong></td><td style="text-align:right;"><strong>36.0</strong></td><td style="text-align:right;"><strong>60.0</strong></td></tr>
         </tbody>
       </table>
