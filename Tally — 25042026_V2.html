@@ -3647,6 +3647,7 @@ body{
     </div>
 
     <!-- Consolidated org & investment summary · collapsed -->
+<!-- Consolidated org & investment summary · collapsed -->
 <div style="margin-top:18px;">
   <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:var(--surface-3);border:1px solid var(--line);border-left:3px solid var(--lever-vision);border-radius:8px;cursor:pointer;" onclick="document.getElementById('bcConsolidated').classList.toggle('open');this.querySelector('.bc-toggle').textContent=document.getElementById('bcConsolidated').classList.contains('open')?'▴ hide':'▾ show';">
     <div>
@@ -3655,48 +3656,167 @@ body{
     </div>
     <div class="bc-toggle" style="font-size:11px;font-weight:600;color:var(--lever-vision);letter-spacing:.04em;">▾ show</div>
   </div>
+
   <div id="bcConsolidated" class="collapsible-inline" style="max-height:0;overflow:hidden;transition:max-height .35s ease;">
-    <div class="calc-block" style="margin-top:14px;">
-      <div class="calc-block-h">Consolidated incremental org at FY30 steady state · adjacencies + geography</div>
-      <table class="calc-tbl">
-        <thead>
-          <tr>
-            <th>Function</th>
-            <th style="text-align:right;">Adjacencies FTE</th>
-            <th style="text-align:right;">Geography FTE</th>
-            <th style="text-align:right;">Total FY30 FTE</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Product build &amp; run teams</td><td style="text-align:right;">~52</td><td style="text-align:right;">—</td><td style="text-align:right;"><strong>~52</strong></td></tr>
-          <tr><td>Sales (incremental)</td><td style="text-align:right;">~80</td><td style="text-align:right;">~26</td><td style="text-align:right;"><strong>~106</strong></td></tr>
-          <tr><td>Customer success &amp; support</td><td style="text-align:right;">~55</td><td style="text-align:right;">~17</td><td style="text-align:right;"><strong>~72</strong></td></tr>
-          <tr><td>Channel &amp; partnerships</td><td style="text-align:right;">~30</td><td style="text-align:right;">~12</td><td style="text-align:right;"><strong>~42</strong></td></tr>
-          <tr><td>Marketing</td><td style="text-align:right;">~20</td><td style="text-align:right;">~5</td><td style="text-align:right;"><strong>~25</strong></td></tr>
-          <tr><td>Country GM &amp; localisation eng</td><td style="text-align:right;">—</td><td style="text-align:right;">~14</td><td style="text-align:right;"><strong>~14</strong></td></tr>
-          <tr class="calc-total"><td><strong>Total incremental org</strong></td><td style="text-align:right;"><strong>~237</strong></td><td style="text-align:right;"><strong>~74</strong></td><td style="text-align:right;"><strong>~311</strong></td></tr>
-        </tbody>
-      </table>
-      <div class="calc-notes">Total incremental hiring across both levers reaches ~311 FTE at FY30 steady state, approximately 6% addition to Tally's current ~4,950 base, supporting ₹620 Cr of incremental annual revenue (₹400 Cr adjacencies + ₹220 Cr geography).</div>
-    </div>
-    <div class="calc-block" style="margin-top:14px;">
-      <div class="calc-block-h">Consolidated investment · adjacencies + geography (₹ Cr)</div>
-      <table class="calc-tbl">
-        <thead>
-          <tr>
-            <th>Lever</th>
-            <th style="text-align:right;">Setup cost (one-time)</th>
-            <th style="text-align:right;">FY30 operating cost (annual)</th>
-            <th style="text-align:right;">FY30 incremental revenue</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Adjacencies (5)</strong></td><td style="text-align:right;">97.0</td><td style="text-align:right;">112.0</td><td style="text-align:right;">400.0</td></tr>
-          <tr><td><strong>Geography (3 markets)</strong></td><td style="text-align:right;">36.0</td><td style="text-align:right;">60.0</td><td style="text-align:right;">220.0</td></tr>
-          <tr class="calc-total"><td><strong>Total</strong></td><td style="text-align:right;"><strong>133.0</strong></td><td style="text-align:right;"><strong>172.0</strong></td><td style="text-align:right;"><strong>620.0</strong></td></tr>
-        </tbody>
-      </table>
-      <div class="calc-notes">Setup investment of ₹133 Cr is a one-time cost to ship and enter all five adjacencies and three priority international markets. FY30 operating cost of ₹172 Cr is the steady-state annual run rate when both levers are generating their forecast incremental revenue.</div>
+    <div style="margin-top:14px;">
+
+      <div class="section-keys" style="border-left-color:var(--lever-vision);">
+        <div class="section-key">
+          <div class="section-key-dot" style="background:var(--lever-vision);"></div>
+          <div>
+            Combined setup investment <strong>₹133 Cr</strong> one-time across five adjacencies and three priority international markets.
+            <a href="javascript:void(0);" onclick="document.getElementById('bcSetup').classList.toggle('open');this.textContent=document.getElementById('bcSetup').classList.contains('open')?'hide':'see breakdown';" style="color:var(--lever-vision);text-decoration:none;border-bottom:1px dotted var(--lever-vision);font-weight:600;cursor:pointer;">see breakdown</a>
+          </div>
+        </div>
+
+        <div class="section-key">
+          <div class="section-key-dot" style="background:var(--lever-vision);"></div>
+          <div>
+            Combined FY30 operating cost <strong>~₹260–290 Cr/yr</strong> — comprising <strong>₹172 Cr in product and regional team operating cost</strong> plus <strong>~₹90–120 Cr in GTM and org overhead</strong>; GTM and overhead grows to <strong>~35–40% of total operating cost</strong> as customer-facing org scales, consistent with mature SaaS economics.
+            <a href="javascript:void(0);" onclick="document.getElementById('bcOp').classList.toggle('open');this.textContent=document.getElementById('bcOp').classList.contains('open')?'hide':'see breakdown';" style="color:var(--lever-vision);text-decoration:none;border-bottom:1px dotted var(--lever-vision);font-weight:600;cursor:pointer;">see breakdown</a>
+          </div>
+        </div>
+
+        <div class="section-key">
+          <div class="section-key-dot" style="background:var(--lever-vision);"></div>
+          <div>
+            Total incremental org reaches <strong>~311 FTEs</strong> across both levers, supporting <strong>₹620 Cr</strong> of incremental annual revenue.
+            <a href="javascript:void(0);" onclick="document.getElementById('bcOrg').classList.toggle('open');this.textContent=document.getElementById('bcOrg').classList.contains('open')?'hide':'see breakdown';" style="color:var(--lever-vision);text-decoration:none;border-bottom:1px dotted var(--lever-vision);font-weight:600;cursor:pointer;">see breakdown</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="bcSetup" class="collapsible-inline" style="max-height:0;overflow:hidden;transition:max-height .35s ease;">
+        <div class="calc-block" style="margin-top:14px;">
+          <div class="calc-block-h">Combined setup investment by lever (₹ Cr, one-time)</div>
+          <table class="calc-tbl">
+            <thead>
+              <tr>
+                <th>Lever</th>
+                <th style="text-align:right;">Setup cost</th>
+                <th>What it covers</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Adjacencies (5)</strong></td>
+                <td style="text-align:right;">97.0</td>
+                <td>Build teams, tools and cloud, vendor licensing, certifications, launch GTM across FSA, Banking, Mobile POS, AI Copilot, Tax engine</td>
+              </tr>
+              <tr>
+                <td><strong>Geography (3 markets)</strong></td>
+                <td style="text-align:right;">36.0</td>
+                <td>Localisation engineering, regulatory certifications, channel build, launch GTM across UAE, KSA, Indonesia</td>
+              </tr>
+              <tr class="calc-total">
+                <td><strong>Total</strong></td>
+                <td style="text-align:right;"><strong>133.0</strong></td>
+                <td><strong>One-time investment to ship and enter both levers</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="bcOp" class="collapsible-inline" style="max-height:0;overflow:hidden;transition:max-height .35s ease;">
+        <div class="calc-block" style="margin-top:14px;">
+          <div class="calc-block-h">Combined FY30 operating cost by layer (₹ Cr/yr)</div>
+          <table class="calc-tbl">
+            <thead>
+              <tr>
+                <th>Cost layer</th>
+                <th style="text-align:right;">FY30 cost</th>
+                <th>Composition</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Product operating cost (adjacencies)</strong></td>
+                <td style="text-align:right;">112.0</td>
+                <td style="cursor:help;" title="Run team people, ongoing cloud and LLM, vendor and API fees, compliance maintenance, sustaining product GTM, and support tooling across the five adjacencies.">Run team, cloud, LLM API, compliance, sustaining product GTM, support tooling</td>
+              </tr>
+              <tr>
+                <td><strong>Regional operating cost (geography)</strong></td>
+                <td style="text-align:right;">60.0</td>
+                <td style="cursor:help;" title="Regional team people, ongoing localisation maintenance, certification renewal, regional support, sustaining country marketing across UAE, KSA, Indonesia.">Regional team, localisation maintenance, country licensing, regional support and marketing</td>
+              </tr>
+              <tr>
+                <td><strong>GTM and org overhead</strong></td>
+                <td style="text-align:right;">~90–120</td>
+                <td style="cursor:help;" title="Sales team (~80 FTEs), customer success (~55 FTEs), channel and partnerships (~30 FTEs), marketing (~20 FTEs) headcount cost at the rate card plus associated tools, content, and overhead. Not allocated to any single adjacency or market because these functions serve the portfolio.">Sales, CS, channel, marketing headcount across both levers (~185 FTEs at rate card)</td>
+              </tr>
+              <tr class="calc-total">
+                <td><strong>Total FY30 operating</strong></td>
+                <td style="text-align:right;"><strong>~260–290</strong></td>
+                <td><strong>vs ₹620 Cr revenue · GTM &amp; overhead ~35–40% of total</strong></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="calc-notes">The GTM and org overhead layer is shown separately because these costs are not allocated to any single adjacency or market in the per-line tables above. Adding them brings the total to a level consistent with mature SaaS operating cost ratios where customer-facing cost typically exceeds product cost as the business scales.</div>
+        </div>
+      </div>
+
+      <div id="bcOrg" class="collapsible-inline" style="max-height:0;overflow:hidden;transition:max-height .35s ease;">
+        <div class="calc-block" style="margin-top:14px;">
+          <div class="calc-block-h">Consolidated incremental org at FY30 steady state</div>
+          <table class="calc-tbl">
+            <thead>
+              <tr>
+                <th>Function</th>
+                <th style="text-align:right;">Adjacencies</th>
+                <th style="text-align:right;">Geography</th>
+                <th style="text-align:right;">Total FY30 FTE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Product build &amp; run teams</td>
+                <td style="text-align:right;">~52</td>
+                <td style="text-align:right;">—</td>
+                <td style="text-align:right;"><strong>~52</strong></td>
+              </tr>
+              <tr>
+                <td>Sales</td>
+                <td style="text-align:right;">~80</td>
+                <td style="text-align:right;">~26</td>
+                <td style="text-align:right;"><strong>~106</strong></td>
+              </tr>
+              <tr>
+                <td>Customer success &amp; support</td>
+                <td style="text-align:right;">~55</td>
+                <td style="text-align:right;">~17</td>
+                <td style="text-align:right;"><strong>~72</strong></td>
+              </tr>
+              <tr>
+                <td>Channel &amp; partnerships</td>
+                <td style="text-align:right;">~30</td>
+                <td style="text-align:right;">~12</td>
+                <td style="text-align:right;"><strong>~42</strong></td>
+              </tr>
+              <tr>
+                <td>Marketing</td>
+                <td style="text-align:right;">~20</td>
+                <td style="text-align:right;">~5</td>
+                <td style="text-align:right;"><strong>~25</strong></td>
+              </tr>
+              <tr>
+                <td>Country GM &amp; localisation eng</td>
+                <td style="text-align:right;">—</td>
+                <td style="text-align:right;">~14</td>
+                <td style="text-align:right;"><strong>~14</strong></td>
+              </tr>
+              <tr class="calc-total">
+                <td><strong>Total</strong></td>
+                <td style="text-align:right;"><strong>~237</strong></td>
+                <td style="text-align:right;"><strong>~74</strong></td>
+                <td style="text-align:right;"><strong>~311</strong></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="calc-notes">Total incremental hiring across both levers reaches ~311 FTE at FY30 steady state, approximately 6% addition to Tally's current ~4,950 base, supporting ₹620 Cr of incremental annual revenue (₹400 Cr adjacencies plus ₹220 Cr geography).</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
