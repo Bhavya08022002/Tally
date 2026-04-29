@@ -2476,61 +2476,130 @@ body{
   <div class="chart-title serif">What it takes to deliver the five adjacencies</div>
   <div class="chart-subtitle">Two questions a partner needs answered: how the organisation shifts to support the build, and what the investment looks like against the revenue it generates</div>
 
-  <!-- Two-takeaway grid -->
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px;">
 
     <!-- ORG SHIFT TAKEAWAY -->
     <div style="background:linear-gradient(135deg,#FAF7F0 0%,#FDFBF5 100%);border:1px solid #E8DDB8;border-radius:10px;padding:20px 22px;">
       <div style="font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--lever-adj);margin-bottom:6px;">Takeaway 1 · Organisation shift</div>
-      <div style="font-family:'Source Serif 4',serif;font-size:15px;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:12px;">Build team of <strong>~74 FTEs</strong> grows to <strong>~265 incremental hires</strong> by FY30 across product, sales, success, channel, marketing, and regional ops — a <strong>~5% addition to the current 4,950 base</strong>.</div>
+      <div style="font-family:'Source Serif 4',serif;font-size:15px;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:12px;">Build team of <strong>~74 FTEs</strong> grows to <strong>~265 incremental hires</strong> by FY30 — a <strong>~5% addition to the current 4,950 base</strong>, sized using SaaS-standard productivity ratios applied to the FY30 revenue forecast.</div>
 
       <table class="calc-tbl" style="font-size:11px;background:var(--surface);">
-        <thead><tr><th>Function</th><th style="text-align:right;">FY30 FTE</th><th style="text-align:right;">Share</th></tr></thead>
+        <thead>
+          <tr>
+            <th>Function</th>
+            <th style="text-align:right;">FTE</th>
+            <th>How the number is derived</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr><td>Sales</td><td style="text-align:right;">80</td><td style="text-align:right;">30%</td></tr>
-          <tr><td>Customer success</td><td style="text-align:right;">55</td><td style="text-align:right;">21%</td></tr>
-          <tr><td>Product run team</td><td style="text-align:right;">52</td><td style="text-align:right;">20%</td></tr>
-          <tr><td>Regional ops (geography)</td><td style="text-align:right;">30</td><td style="text-align:right;">11%</td></tr>
-          <tr><td>Channel &amp; partnerships</td><td style="text-align:right;">30</td><td style="text-align:right;">11%</td></tr>
-          <tr><td>Marketing</td><td style="text-align:right;">20</td><td style="text-align:right;">7%</td></tr>
-          <tr class="calc-total"><td><strong>Total incremental org</strong></td><td style="text-align:right;"><strong>~265</strong></td><td style="text-align:right;"><strong>100%</strong></td></tr>
+          <tr>
+            <td><strong>Sales</strong></td>
+            <td style="text-align:right;">80</td>
+            <td>₹400 Cr ÷ ₹5 Cr ARR per rep<sup class="source-ref" data-src="s19">[19]</sup></td>
+          </tr>
+          <tr>
+            <td><strong>Customer success</strong></td>
+            <td style="text-align:right;">55</td>
+            <td>₹400 Cr ÷ ₹7 Cr ARR per CSM<sup class="source-ref" data-src="s19">[19]</sup></td>
+          </tr>
+          <tr>
+            <td><strong>Product run team</strong></td>
+            <td style="text-align:right;">52</td>
+            <td>70% of 74-FTE build team<sup class="source-ref" data-src="s24">[24]</sup></td>
+          </tr>
+          <tr>
+            <td><strong>Channel &amp; partnerships</strong></td>
+            <td style="text-align:right;">30</td>
+            <td>~6 per adjacency for reseller, bank, ASP, Big-4 ties</td>
+          </tr>
+          <tr>
+            <td><strong>Regional ops</strong></td>
+            <td style="text-align:right;">30</td>
+            <td>~10 per country across UAE, KSA, Indonesia</td>
+          </tr>
+          <tr>
+            <td><strong>Marketing</strong></td>
+            <td style="text-align:right;">20</td>
+            <td>1 PMM per adjacency + content, demand gen, AR</td>
+          </tr>
+          <tr class="calc-total">
+            <td><strong>Total incremental org</strong></td>
+            <td style="text-align:right;"><strong>~265</strong></td>
+            <td><strong>~5% of current 4,950 base</strong></td>
+          </tr>
         </tbody>
       </table>
 
       <div style="margin-top:12px;padding:10px 12px;background:var(--surface);border-left:3px solid var(--lever-adj);border-radius:4px;font-size:11.5px;color:var(--ink-2);line-height:1.55;">
-        <strong style="color:var(--navy);">What stands out ·</strong> the shift is more about customer-facing capacity than engineering — sales and customer success together account for over half the incremental hires. Banking and AI Copilot carry the heaviest engineering load; Tax engine the lightest by reusing existing GST architecture. <a href="javascript:void(0);" onclick="document.getElementById('orgByAdj').classList.toggle('open');this.textContent=document.getElementById('orgByAdj').classList.contains('open')?'hide breakdown by adjacency':'see breakdown by adjacency';" style="color:var(--lever-adj);text-decoration:none;border-bottom:1px dotted var(--lever-adj);font-weight:600;cursor:pointer;">see breakdown by adjacency</a>
+        <strong style="color:var(--navy);">What stands out ·</strong> the shift is more about customer-facing capacity than engineering — sales and customer success together account for over half of the incremental hires. <a href="javascript:void(0);" onclick="document.getElementById('orgByAdj').classList.toggle('open');this.textContent=document.getElementById('orgByAdj').classList.contains('open')?'hide breakdown by adjacency':'see breakdown by adjacency';" style="color:var(--lever-adj);text-decoration:none;border-bottom:1px dotted var(--lever-adj);font-weight:600;cursor:pointer;">see breakdown by adjacency</a>
       </div>
     </div>
 
     <!-- INVESTMENT TAKEAWAY -->
     <div style="background:linear-gradient(135deg,#FAF7F0 0%,#FDFBF5 100%);border:1px solid #E8DDB8;border-radius:10px;padding:20px 22px;">
       <div style="font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--lever-adj);margin-bottom:6px;">Takeaway 2 · Investment line</div>
-      <div style="font-family:'Source Serif 4',serif;font-size:15px;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:12px;">Setup <strong>₹85–110 Cr</strong> one-time; FY30 operating <strong>₹100–125 Cr/yr</strong>. Sits within the <strong>19–21% R&amp;D-to-revenue range</strong> reported by Freshworks and Intuit<sup class="source-ref" data-src="s19">[19]</sup>.</div>
+      <div style="font-family:'Source Serif 4',serif;font-size:15px;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:12px;">Setup <strong>₹85–110 Cr</strong> one-time; FY30 operating <strong>₹100–125 Cr/yr</strong>. Operating cost equals <strong>~28% of FY30 incremental revenue</strong>, in line with Freshworks (21%) and Intuit (19%) R&amp;D-to-revenue benchmarks<sup class="source-ref" data-src="s19">[19]</sup>.</div>
 
       <table class="calc-tbl" style="font-size:11px;background:var(--surface);">
-        <thead><tr><th>Adjacency</th><th style="text-align:right;">Setup</th><th style="text-align:right;">FY30 op</th><th style="text-align:right;">% op</th></tr></thead>
+        <thead>
+          <tr>
+            <th>Adjacency</th>
+            <th style="text-align:right;">Setup</th>
+            <th style="text-align:right;">FY30 op</th>
+            <th>Largest cost line</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr><td>FSA</td><td style="text-align:right;">20.0</td><td style="text-align:right;">16.5</td><td style="text-align:right;">15%</td></tr>
-          <tr><td>Banking</td><td style="text-align:right;">25.0</td><td style="text-align:right;">20.0</td><td style="text-align:right;">18%</td></tr>
-          <tr><td>Mobile POS</td><td style="text-align:right;">17.5</td><td style="text-align:right;">24.0</td><td style="text-align:right;">21%</td></tr>
-          <tr style="background:var(--lever-adj-soft);"><td><strong>AI Copilot</strong></td><td style="text-align:right;">21.0</td><td style="text-align:right;"><strong>40.0</strong></td><td style="text-align:right;"><strong>36%</strong></td></tr>
-          <tr><td>Tax engine</td><td style="text-align:right;">13.5</td><td style="text-align:right;">11.5</td><td style="text-align:right;">10%</td></tr>
-          <tr class="calc-total"><td><strong>Total (₹ Cr)</strong></td><td style="text-align:right;"><strong>97.0</strong></td><td style="text-align:right;"><strong>112.0</strong></td><td style="text-align:right;"><strong>100%</strong></td></tr>
+          <tr>
+            <td><strong>FSA</strong></td>
+            <td style="text-align:right;">20.0</td>
+            <td style="text-align:right;">16.5</td>
+            <td>Launch GTM, 53% of setup</td>
+          </tr>
+          <tr>
+            <td><strong>Banking</strong></td>
+            <td style="text-align:right;">25.0</td>
+            <td style="text-align:right;">20.0</td>
+            <td>Launch GTM + AA fees, 55% of setup</td>
+          </tr>
+          <tr>
+            <td><strong>Mobile POS</strong></td>
+            <td style="text-align:right;">17.5</td>
+            <td style="text-align:right;">24.0</td>
+            <td>Sustaining GTM, 58% of operating</td>
+          </tr>
+          <tr style="background:var(--lever-adj-soft);">
+            <td><strong>AI Copilot</strong></td>
+            <td style="text-align:right;">21.0</td>
+            <td style="text-align:right;"><strong>40.0</strong></td>
+            <td><strong>LLM + GPU cloud, 70% of operating</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Tax engine</strong></td>
+            <td style="text-align:right;">13.5</td>
+            <td style="text-align:right;">11.5</td>
+            <td>Reuses GST architecture, lightest</td>
+          </tr>
+          <tr class="calc-total">
+            <td><strong>Total (₹ Cr)</strong></td>
+            <td style="text-align:right;"><strong>97.0</strong></td>
+            <td style="text-align:right;"><strong>112.0</strong></td>
+            <td><strong>vs ₹400 Cr revenue</strong></td>
+          </tr>
         </tbody>
       </table>
 
       <div style="margin-top:12px;padding:10px 12px;background:var(--surface);border-left:3px solid var(--lever-adj);border-radius:4px;font-size:11.5px;color:var(--ink-2);line-height:1.55;">
-        <strong style="color:var(--navy);">What stands out ·</strong> AI Copilot disproportionately heavy at <strong>~36% of operating cost</strong> because LLM inference at FY30 scale runs ₹12 Cr/yr alone; Tax engine lightest at <strong>~10%</strong> by reusing existing GST architecture. <a href="javascript:void(0);" onclick="document.getElementById('costDeepDives').classList.toggle('open');this.textContent=document.getElementById('costDeepDives').classList.contains('open')?'hide cost-line detail':'see cost-line detail per adjacency';" style="color:var(--lever-adj);text-decoration:none;border-bottom:1px dotted var(--lever-adj);font-weight:600;cursor:pointer;">see cost-line detail per adjacency</a>
+        <strong style="color:var(--navy);">What stands out ·</strong> AI Copilot operating cost is dominated by LLM inference at FY30 scale — ₹12 Cr/yr in API fees plus ₹16 Cr/yr in GPU compute. Tax engine sits lightest because reusing existing GST architecture eliminates the ground-up build the other four require. <a href="javascript:void(0);" onclick="document.getElementById('costDeepDives').classList.toggle('open');this.textContent=document.getElementById('costDeepDives').classList.contains('open')?'hide cost-line detail':'see cost-line detail per adjacency';" style="color:var(--lever-adj);text-decoration:none;border-bottom:1px dotted var(--lever-adj);font-weight:600;cursor:pointer;">see cost-line detail per adjacency</a>
       </div>
     </div>
 
   </div>
 
-  <!-- Directional banner -->
   <div class="consider-note" style="margin-top:18px;">
     <div class="consider-note-h">Directional · preliminary sizing for partner discussion</div>
     <div class="consider-note-t serif">Both takeaways are directional sizing intended to frame the discussion, not commitments to specific spend or hiring plans.</div>
-    <div class="consider-note-b">The org figures are sized using SaaS-standard ratios (1 sales rep per ₹4–5 Cr ARR; 1 CSM per ₹6–8 Cr ARR) applied to the FY30 revenue forecast. The investment figures are bottom-up build-and-operate estimates per adjacency. Final numbers depend on detailed launch planning, vendor RFPs, and HR validation. The cost-line detail behind the click below shows the underlying derivation for every figure.</div>
+    <div class="consider-note-b">Org figures are sized using SaaS-standard productivity ratios (1 sales rep per ₹4–5 Cr ARR; 1 CSM per ₹6–8 Cr ARR per Bessemer Cloud Index<sup class="source-ref" data-src="s19">[19]</sup>) applied to the FY30 revenue forecast. Investment figures are bottom-up build-and-operate estimates per adjacency. Final numbers depend on detailed launch planning, vendor RFPs, and HR validation. The cost-line detail behind the click below shows the underlying derivation for every figure.</div>
   </div>
 
   <!-- Org breakdown by adjacency · collapsible -->
@@ -2785,7 +2854,6 @@ body{
 
   </div>
 
-  <!-- Methodology · collapsible -->
   <div class="collapsible-section" style="margin-top:18px;">
     <div class="collapsible-head" onclick="this.parentElement.classList.toggle('open')">
       <div class="collapsible-head-text">
@@ -2800,8 +2868,6 @@ body{
         <p class="detail-p">Setup is the one-time cost to ship each adjacency to launch readiness. FY30 operating cost is the steady-state annual run rate when each adjacency is generating its forecast revenue. The path between is intentionally not modelled because year-by-year ramp curves invite questions that depend on launch-plan specifics not yet known.</p>
         <div class="detail-h">Compensation rate card<sup class="source-ref" data-src="s18">[18]</sup></div>
         <p class="detail-p">PM ₹40 LPA, Engineering blended ₹35 LPA, Data/ML ₹50 LPA, Design ₹30 LPA, QA ₹18 LPA, Sec/Compliance ₹40 LPA, BD/Partnerships ₹30 LPA, Support/Ops ₹15 LPA. All fully loaded with 1.30–1.40× factor over base CTC.</p>
-        <div class="detail-h">Org sizing logic</div>
-        <p class="detail-p">Sales sized at one quota-carrying rep per ₹4–5 Cr ARR target. Customer success sized at one CSM per ₹6–8 Cr ARR. Channel and partnerships sized to retrain Tally's existing 28K reseller network for SaaS adjacency motion plus new bank, Big-4, and ASP partnerships. Marketing sized at one PMM per adjacency plus content, demand gen, and analyst relations.</p>
         <div class="detail-h">What this model does NOT assume</div>
         <p class="detail-p">No inorganic build or M&amp;A; every FTE is hired in. No re-deployment from existing Tally org; every cost is incremental. No revenue offset against setup cost; this is a pure investment view, not NPV. No learning-curve productivity gains in operating cost over time.</p>
       </div>
