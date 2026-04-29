@@ -2467,6 +2467,398 @@ body{
       </div>
     </div>
   </div>
+
+  <!-- ============ HEADCOUNT & INVESTMENT MODEL · paste below adj-waterfall ============ -->
+<div class="card" style="margin-top:22px;padding:22px 24px 18px;position:relative;">
+  <div style="position:absolute;top:16px;right:20px;font-size:9.5px;color:var(--mute-2);letter-spacing:.1em;text-transform:uppercase;font-weight:700;">Directional</div>
+
+  <div class="chart-title serif">Headcount &amp; Year-1 investment to build the five adjacencies</div>
+  <div class="chart-subtitle">Bottom-up team sizing × fully-loaded comp + non-people cost ranges · Run team derived from Build at adjustable ratio</div>
+
+  <!-- Three takeaways -->
+  <div class="section-keys adj" style="margin-top:14px;margin-bottom:18px;">
+    <div class="section-key"><div class="section-key-dot"></div><div>~74 Build FTEs cost <strong>₹37–62 Cr Year-1</strong>, roughly <strong>12% of FY30 incremental revenue</strong> — within Freshworks (21%) &amp; Intuit (19%) R&amp;D-to-revenue benchmarks<sup class="source-ref" data-src="s19">[19]</sup>.</div></div>
+    <div class="section-key"><div class="section-key-dot"></div><div>AI Copilot heaviest at <strong>~₹14 Cr</strong> (ML team + LLM inference); Tax engine lightest at <strong>~₹7 Cr</strong> by reusing existing GST architecture.</div></div>
+    <div class="section-key"><div class="section-key-dot"></div><div>Run team scales to <strong>~52 FTEs at default 70% Build ratio</strong> — slider below exposes this assumption directly<sup class="source-ref" data-src="s24">[24]</sup>.</div></div>
+  </div>
+
+  <!-- Interactive controls -->
+  <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;padding:14px 18px;background:var(--surface-3);border:1px solid var(--line);border-radius:8px;margin-bottom:18px;">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <label for="runPctSlider" style="font-size:11px;font-weight:600;color:var(--ink);letter-spacing:.02em;">Run team as % of Build<sup class="source-ref" data-src="s24">[24]</sup></label>
+      <input type="range" id="runPctSlider" min="60" max="80" value="70" step="1" style="width:160px;accent-color:var(--lever-adj);">
+      <span id="runPctVal" style="font-family:'Source Serif 4',serif;font-size:14px;font-weight:700;color:var(--lever-adj);min-width:42px;">70%</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <label style="font-size:11px;font-weight:600;color:var(--ink);letter-spacing:.02em;">Cloud &amp; inference loading<sup class="source-ref" data-src="s20">[20]</sup><sup class="source-ref" data-src="s21">[21]</sup></label>
+      <div id="costLoadingToggle" style="display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:3px;">
+        <button class="cost-toggle-btn" data-loading="cons" style="border:none;background:transparent;font-size:10.5px;font-weight:600;padding:5px 11px;border-radius:4px;cursor:pointer;color:var(--mute);font-family:inherit;">Conservative</button>
+        <button class="cost-toggle-btn active" data-loading="base" style="border:none;background:var(--navy);color:#fff;font-size:10.5px;font-weight:600;padding:5px 11px;border-radius:4px;cursor:pointer;font-family:inherit;">Base</button>
+        <button class="cost-toggle-btn" data-loading="aggr" style="border:none;background:transparent;font-size:10.5px;font-weight:600;padding:5px 11px;border-radius:4px;cursor:pointer;color:var(--mute);font-family:inherit;">Aggressive</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Roll-up table -->
+  <div class="calc-block" style="margin-top:0;">
+    <div class="calc-block-h">Portfolio roll-up · Year-1 build &amp; run · all five adjacencies (₹ Cr)</div>
+    <table class="calc-tbl" id="hcRollupTbl">
+      <thead>
+        <tr>
+          <th>Adjacency</th>
+          <th style="text-align:right;">Build FTE</th>
+          <th style="text-align:right;">Run FTE <span id="runHdrPct">(70%)</span></th>
+          <th style="text-align:right;">Year-1 · Low</th>
+          <th style="text-align:right;">Year-1 · Base</th>
+          <th style="text-align:right;">Year-1 · High</th>
+        </tr>
+      </thead>
+      <tbody id="hcRollupBody">
+        <tr data-adj="fsa" data-build="16"
+            data-cons-l="6.4" data-cons-b="8.4" data-cons-h="10.5"
+            data-base-l="6.7" data-base-b="8.8" data-base-h="11.1"
+            data-aggr-l="7.0" data-aggr-b="9.3" data-aggr-h="11.8">
+          <td><strong>1 · FSA</strong></td>
+          <td style="text-align:right;">16</td>
+          <td style="text-align:right;" class="run-fte">11</td>
+          <td style="text-align:right;" class="cost-low">6.7</td>
+          <td style="text-align:right;" class="cost-base"><strong>8.8</strong></td>
+          <td style="text-align:right;" class="cost-high">11.1</td>
+        </tr>
+        <tr data-adj="banking" data-build="17"
+            data-cons-l="7.2" data-cons-b="9.5" data-cons-h="11.9"
+            data-base-l="7.4" data-base-b="9.8" data-base-h="12.3"
+            data-aggr-l="7.7" data-aggr-b="10.2" data-aggr-h="12.8">
+          <td><strong>2 · Banking</strong></td>
+          <td style="text-align:right;">17</td>
+          <td style="text-align:right;" class="run-fte">12</td>
+          <td style="text-align:right;" class="cost-low">7.4</td>
+          <td style="text-align:right;" class="cost-base"><strong>9.8</strong></td>
+          <td style="text-align:right;" class="cost-high">12.3</td>
+        </tr>
+        <tr data-adj="mobile" data-build="14"
+            data-cons-l="6.8" data-cons-b="8.5" data-cons-h="10.8"
+            data-base-l="7.0" data-base-b="8.8" data-base-h="11.2"
+            data-aggr-l="7.3" data-aggr-b="9.2" data-aggr-h="11.7">
+          <td><strong>3 · Mobile POS</strong></td>
+          <td style="text-align:right;">14</td>
+          <td style="text-align:right;" class="run-fte">10</td>
+          <td style="text-align:right;" class="cost-low">7.0</td>
+          <td style="text-align:right;" class="cost-base"><strong>8.8</strong></td>
+          <td style="text-align:right;" class="cost-high">11.2</td>
+        </tr>
+        <tr data-adj="ai" data-build="16"
+            data-cons-l="8.6" data-cons-b="11.5" data-cons-h="15.0"
+            data-base-l="10.1" data-base-b="13.7" data-base-h="18.1"
+            data-aggr-l="11.6" data-aggr-b="16.0" data-aggr-h="21.5">
+          <td><strong>4 · AI Copilot</strong></td>
+          <td style="text-align:right;">16</td>
+          <td style="text-align:right;" class="run-fte">11</td>
+          <td style="text-align:right;" class="cost-low">10.1</td>
+          <td style="text-align:right;" class="cost-base"><strong>13.7</strong></td>
+          <td style="text-align:right;" class="cost-high">18.1</td>
+        </tr>
+        <tr data-adj="tax" data-build="11"
+            data-cons-l="5.1" data-cons-b="6.8" data-cons-h="8.7"
+            data-base-l="5.3" data-base-b="7.0" data-base-h="9.0"
+            data-aggr-l="5.5" data-aggr-b="7.3" data-aggr-h="9.4">
+          <td><strong>5 · Tax engine</strong></td>
+          <td style="text-align:right;">11</td>
+          <td style="text-align:right;" class="run-fte">8</td>
+          <td style="text-align:right;" class="cost-low">5.3</td>
+          <td style="text-align:right;" class="cost-base"><strong>7.0</strong></td>
+          <td style="text-align:right;" class="cost-high">9.0</td>
+        </tr>
+        <tr class="calc-total">
+          <td><strong>Total</strong></td>
+          <td style="text-align:right;"><strong>74</strong></td>
+          <td style="text-align:right;"><strong class="run-fte-total">52</strong></td>
+          <td style="text-align:right;"><strong class="cost-low-total">36.5</strong></td>
+          <td style="text-align:right;"><strong class="cost-base-total">48.1</strong></td>
+          <td style="text-align:right;"><strong class="cost-high-total">61.7</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="calc-notes">
+      <strong>Reading the table ·</strong> Build FTE × fully-loaded compensation<sup class="source-ref" data-src="s18">[18]</sup> + non-people cost ranges = Year-1 ₹ Cr range. Run FTE = Build × selected slider %. Cost loading toggle re-bases AI Copilot cloud + LLM costs<sup class="source-ref" data-src="s20">[20]</sup><sup class="source-ref" data-src="s21">[21]</sup>; other adjacencies move only marginally on the toggle.
+    </div>
+  </div>
+
+  <!-- Per-adjacency build cards -->
+  <div style="margin-top:22px;">
+    <div class="chart-title serif" style="font-size:13.5px;margin-bottom:6px;">Per-adjacency build detail</div>
+    <div class="chart-subtitle" style="margin-bottom:12px;">Click any row to expand · headcount FTEs and cost lines carry hover tooltips · per-card detail shown for Base scenario</div>
+
+    <!-- ===== FSA ===== -->
+    <div class="adj-rank-card" data-bldcard="fsa">
+      <div class="adj-rank-head">
+        <div class="rank r1">1</div>
+        <div>
+          <div class="adj-rank-title serif">Financial Statement Analysis<small>16 Build · <span class="run-card-hdr" data-build="16">11</span> Run · ₹8.8 Cr Year-1 (Base)</small></div>
+        </div>
+        <div class="adj-rank-stage">Build · In-house</div>
+        <div class="adj-rank-toggle">▾</div>
+      </div>
+      <div class="adj-rank-body">
+        <div class="adj-rank-body-inner" style="grid-template-columns:1fr 1fr;">
+          <div style="padding-top:16px;">
+            <div class="detail-h">Headcount build · hover any FTE for rationale</div>
+            <table class="calc-tbl" style="font-size:11px;">
+              <thead><tr><th>Function</th><th style="text-align:right;">Build</th><th style="text-align:right;">Run <span class="run-hdr-pct">(70%)</span></th></tr></thead>
+              <tbody>
+                <tr><td>PM</td><td style="text-align:right;cursor:help;" title="One PM owns FSA roadmap end-to-end; small enough scope that a second PM is unnecessary.">1</td><td style="text-align:right;" data-runcell data-build="1">1</td></tr>
+                <tr><td>Engineering</td><td style="text-align:right;cursor:help;" title="3 backend (ledger queries, ratio engine, reporting) + 2 frontend (analyst dashboards) + 1 platform.">6</td><td style="text-align:right;" data-runcell data-build="6">4</td></tr>
+                <tr><td>Data/ML</td><td style="text-align:right;cursor:help;" title="2 ML for ratio anomaly detection &amp; forecasting + 1 data engineer for ledger ETL pipelines.">3</td><td style="text-align:right;" data-runcell data-build="3">2</td></tr>
+                <tr><td>Design</td><td style="text-align:right;cursor:help;" title="One senior designer; FSA needs business-owner UX (not accountant UX), a fresh design muscle.">1</td><td style="text-align:right;" data-runcell data-build="1">1</td></tr>
+                <tr><td>QA</td><td style="text-align:right;cursor:help;" title="Two QA — financial outputs need higher-than-usual accuracy validation.">2</td><td style="text-align:right;" data-runcell data-build="2">1</td></tr>
+                <tr><td>Sec/Compliance</td><td style="text-align:right;cursor:help;" title="One for SOC 2 + DPDP — FSA processes sensitive data but no banking integration.">1</td><td style="text-align:right;" data-runcell data-build="1">1</td></tr>
+                <tr><td>BD/Partnerships</td><td style="text-align:right;cursor:help;" title="One for accountant channel enablement — accountants are the buying influencer.">1</td><td style="text-align:right;" data-runcell data-build="1">1</td></tr>
+                <tr><td>Support/Ops</td><td style="text-align:right;cursor:help;" title="One for premium-tier white-glove onboarding during Year 1.">1</td><td style="text-align:right;" data-runcell data-build="1">1</td></tr>
+                <tr class="calc-total"><td><strong>Total</strong></td><td style="text-align:right;"><strong>16</strong></td><td style="text-align:right;"><strong data-runcell-total data-build="16">11</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="padding-top:16px;">
+            <div class="detail-h">Year-1 cost (₹ Cr) · hover for confidence &amp; rationale</div>
+            <table class="calc-tbl" style="font-size:11px;">
+              <thead><tr><th>Cost line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th><th style="text-align:center;">Conf.</th></tr></thead>
+              <tbody>
+                <tr><td>People (16 Build × rate card<sup class="source-ref" data-src="s18">[18]</sup>)</td><td style="text-align:right;">4.4</td><td style="text-align:right;"><strong>5.5</strong></td><td style="text-align:right;">6.6</td><td style="text-align:center;"><span title="Range estimate — derived from rate card × Build FTE." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--lever-adj-soft);color:var(--lever-adj);cursor:help;">RANGE</span></td></tr>
+                <tr><td>Tools &amp; cloud<sup class="source-ref" data-src="s20">[20]</sup></td><td style="text-align:right;">0.5</td><td style="text-align:right;"><strong>0.7</strong></td><td style="text-align:right;">0.9</td><td style="text-align:center;"><span title="Range estimate — typical Year-1 SaaS infrastructure spend." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--lever-adj-soft);color:var(--lever-adj);cursor:help;">RANGE</span></td></tr>
+                <tr><td>Vendor/API (BI, viz libs)</td><td style="text-align:right;">0.2</td><td style="text-align:right;"><strong>0.3</strong></td><td style="text-align:right;">0.5</td><td style="text-align:center;"><span title="Range estimate — public Tableau / Looker list pricing for embedded use." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--lever-adj-soft);color:var(--lever-adj);cursor:help;">RANGE</span></td></tr>
+                <tr><td>SOC 2 + DPDP audit<sup class="source-ref" data-src="s23">[23]</sup></td><td style="text-align:right;">0.3</td><td style="text-align:right;"><strong>0.4</strong></td><td style="text-align:right;">0.6</td><td style="text-align:center;"><span title="To verify — actual audit quote requires firm RFP." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--amber-soft);color:var(--amber);cursor:help;">VERIFY</span></td></tr>
+                <tr><td>GTM launch</td><td style="text-align:right;">1.0</td><td style="text-align:right;"><strong>1.5</strong></td><td style="text-align:right;">2.0</td><td style="text-align:center;"><span title="To verify — depends on channel strategy and existing accountant outreach budget." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--amber-soft);color:var(--amber);cursor:help;">VERIFY</span></td></tr>
+                <tr><td>Support tooling</td><td style="text-align:right;">0.3</td><td style="text-align:right;"><strong>0.4</strong></td><td style="text-align:right;">0.5</td><td style="text-align:center;"><span title="Range estimate — Zendesk-class CRM public pricing." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--lever-adj-soft);color:var(--lever-adj);cursor:help;">RANGE</span></td></tr>
+                <tr class="calc-total"><td><strong>Year-1 total</strong></td><td style="text-align:right;"><strong>6.7</strong></td><td style="text-align:right;"><strong>8.8</strong></td><td style="text-align:right;"><strong>11.1</strong></td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== BANKING ===== -->
+    <div class="adj-rank-card" data-bldcard="banking">
+      <div class="adj-rank-head">
+        <div class="rank r2">2</div>
+        <div>
+          <div class="adj-rank-title serif">Banking connectivity<small>17 Build · <span class="run-card-hdr" data-build="17">12</span> Run · ₹9.8 Cr Year-1 (Base)</small></div>
+        </div>
+        <div class="adj-rank-stage">Build · In-house</div>
+        <div class="adj-rank-toggle">▾</div>
+      </div>
+      <div class="adj-rank-body">
+        <div class="adj-rank-body-inner" style="grid-template-columns:1fr 1fr;">
+          <div style="padding-top:16px;">
+            <div class="detail-h">Headcount build · hover any FTE for rationale</div>
+            <table class="calc-tbl" style="font-size:11px;">
+              <thead><tr><th>Function</th><th style="text-align:right;">Build</th><th style="text-align:right;">Run <span class="run-hdr-pct">(70%)</span></th></tr></thead>
+              <tbody>
+                <tr><td>PM</td><td style="text-align:right;cursor:help;" title="One PM with fintech background; AA framework knowledge non-negotiable.">1</td><td style="text-align:right;" data-runcell data-build="1">1</td></tr>
+                <tr><td>Engineering</td><td style="text-align:right;cursor:help;" title="Highest Eng count: 4 for AA TSP integrations across 10+ banks + 2 for UPI auto-match + 1 platform.">7</td><td style="text-align:right;" data-runcell data-build="7">5</td></tr>
+                <tr><td>Data/ML</td><td style="text-align:right;cursor:help;" title="One for transaction categorisation; lighter than FSA because workflow is rule-driven, not predictive.">1</td><td style="text-align:right;" data-runcell data-build="1">1</td></tr>
+                <tr><td>Design</td><td style="text-align:right;cursor:help;" title="One senior designer for reconciliation UX — historically the biggest accountant pain.">1</td><td style="text-align:right;" data-runcell data-build="1">1</td></tr>
+                <tr><td>QA</td><td style="text-align:right;cursor:help;" title="Two QA — banking integrations have zero tolerance for false reconciliation.">2</td><td style="text-align:right;" data-runcell data-build="2">1</td></tr>
+                <tr><td>Sec/Compliance</td><td style="text-align:right;cursor:help;" title="Highest of all five: 1 for RBI/AA reviews + 1 for bank cybersecurity audits.">2</td><td style="text-align:right;" data-runcell data-build="2">1</td></tr>
+                <tr><td>BD/Partnerships</td><td style="text-align:right;cursor:help;" title="Two — 1 for AA TSPs (Decentro/Setu) + 1 for direct bank tie-ups (10+ banks).">2</td><td style="text-align:right;" data-runcell data-build="2">1</td></tr>
+                <tr><td>Support/Ops</td><td style="text-align:right;cursor:help;" title="One for escalation handling on bank integration issues.">1</td><td style="text-align:right;" data-runcell data-build="1">1</td></tr>
+                <tr class="calc-total"><td><strong>Total</strong></td><td style="text-align:right;"><strong>17</strong></td><td style="text-align:right;"><strong data-runcell-total data-build="17">12</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="padding-top:16px;">
+            <div class="detail-h">Year-1 cost (₹ Cr) · hover for confidence &amp; rationale</div>
+            <table class="calc-tbl" style="font-size:11px;">
+              <thead><tr><th>Cost line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th><th style="text-align:center;">Conf.</th></tr></thead>
+              <tbody>
+                <tr><td>People (17 Build × rate card<sup class="source-ref" data-src="s18">[18]</sup>)</td><td style="text-align:right;">4.5</td><td style="text-align:right;"><strong>5.6</strong></td><td style="text-align:right;">6.7</td><td style="text-align:center;"><span title="Range estimate — derived from rate card × Build FTE." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--lever-adj-soft);color:var(--lever-adj);cursor:help;">RANGE</span></td></tr>
+                <tr><td>Tools &amp; cloud<sup class="source-ref" data-src="s20">[20]</sup></td><td style="text-align:right;">0.4</td><td style="text-align:right;"><strong>0.5</strong></td><td style="text-align:right;">0.6</td><td style="text-align:center;"><span title="Range estimate — typical Year-1 SaaS infrastructure spend." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--lever-adj-soft);color:var(--lever-adj);cursor:help;">RANGE</span></td></tr>
+                <tr><td>Vendor/API (AA TSPs<sup class="source-ref" data-src="s22">[22]</sup>)</td><td style="text-align:right;">0.5</td><td style="text-align:right;"><strong>0.8</strong></td><td style="text-align:right;">1.2</td><td style="text-align:center;"><span title="To verify — Decentro/Setu/Finvu publish indicative rates only via sales engagement." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--amber-soft);color:var(--amber);cursor:help;">VERIFY</span></td></tr>
+                <tr><td>RBI &amp; bank cyber audits<sup class="source-ref" data-src="s23">[23]</sup></td><td style="text-align:right;">0.8</td><td style="text-align:right;"><strong>1.2</strong></td><td style="text-align:right;">1.5</td><td style="text-align:center;"><span title="To verify — highest audit line of all five; banking has the steepest regulatory burden." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--amber-soft);color:var(--amber);cursor:help;">VERIFY</span></td></tr>
+                <tr><td>GTM (bank co-marketing)</td><td style="text-align:right;">0.8</td><td style="text-align:right;"><strong>1.2</strong></td><td style="text-align:right;">1.6</td><td style="text-align:center;"><span title="To verify — assumed co-funded with bank partners but unconfirmed." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--amber-soft);color:var(--amber);cursor:help;">VERIFY</span></td></tr>
+                <tr><td>Support &amp; escalation tooling</td><td style="text-align:right;">0.4</td><td style="text-align:right;"><strong>0.5</strong></td><td style="text-align:right;">0.7</td><td style="text-align:center;"><span title="Range estimate — includes escalation tooling for bank integration issues." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--lever-adj-soft);color:var(--lever-adj);cursor:help;">RANGE</span></td></tr>
+                <tr class="calc-total"><td><strong>Year-1 total</strong></td><td style="text-align:right;"><strong>7.4</strong></td><td style="text-align:right;"><strong>9.8</strong></td><td style="text-align:right;"><strong>12.3</strong></td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== MOBILE POS ===== -->
+    <div class="adj-rank-card" data-bldcard="mobile">
+      <div class="adj-rank-head">
+        <div class="rank r3">3</div>
+        <div>
+          <div class="adj-rank-title serif">Mobile POS<small>14 Build · <span class="run-card-hdr" data-build="14">10</span> Run · ₹8.8 Cr Year-1 (Base)</small></div>
+        </div>
+        <div class="adj-rank-stage">Build · In-house</div>
+        <div class="adj-rank-toggle">▾</div>
+      </div>
+      <div class="adj-rank-body">
+        <div class="adj-rank-body-inner" style="grid-template-columns:1fr 1fr;">
+          <div style="padding-top:16px;">
+            <div class="detail-h">Headcount build · hover any FTE for rationale</div>
+            <table class="calc-tbl" style="font-size:11px;">
+              <thead><tr><th>Function</th><th style="text-align:right;">Build</th><th style="text-align:right;">Run <span class="run-hdr-pct">(70%)</span></th></tr></thead>
+              <tbody>
+                <tr><td>PM</td><td style="text-align:right;cursor:help;" title="One PM with mobile/B2C product background; different surface from desktop Tally.">1</td><td style="text-align:right;" data-runcell data-build="1">1</td></tr>
+                <tr><td>Engineering</td><td style="text-align:right;cursor:help;" title="3 Android (primary) + 2 iOS + 1 backend; mobile-first design needs separate codebase.">6</td><td style="text-align:right;" data-runcell data-build="6">4</td></tr>
+                <tr><td>Data/ML</td><td style="text-align:right;cursor:help;" title="Half FTE — light analytics for invoicing patterns; no heavy ML in Year 1.">0.5</td><td style="text-align:right;" data-runcell data-build="0.5">0.5</td></tr>
+                <tr><td>Design</td><td style="text-align:right;cursor:help;" title="Highest of all five — mobile UX is a fresh discipline needing dedicated visual + interaction firepower.">2</td><td style="text-align:right;" data-runcell data-build="2">1</td></tr>
+                <tr><td>QA</td><td style="text-align:right;cursor:help;" title="Two QA — Android device fragmentation alone justifies dedicated mobile QA.">2</td><td style="text-align:right;" data-runcell data-build="2">1</td></tr>
+                <tr><td>Sec/Compliance</td><td style="text-align:right;cursor:help;" title="Half FTE — PCI-DSS lite scope only; no full payment processing.">0.5</td><td style="text-align:right;" data-runcell data-build="0.5">0.5</td></tr>
+                <tr><td>BD/Partnerships</td><td style="text-align:right;cursor:help;" title="One for payment gateway partnerships (Razorpay, Cashfree, UPI).">1</td><td style="text-align:right;" data-runcell data-build="1">1</td></tr>
+                <tr><td>Support/Ops</td><td style="text-align:right;cursor:help;" title="One for in-app support and Tier-2/3 SMB onboarding.">1</td><td style="text-align:right;" data-runcell data-build="1">1</td></tr>
+                <tr class="calc-total"><td><strong>Total</strong></td><td style="text-align:right;"><strong>14</strong></td><td style="text-align:right;"><strong data-runcell-total data-build="14">10</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="padding-top:16px;">
+            <div class="detail-h">Year-1 cost (₹ Cr) · hover for confidence &amp; rationale</div>
+            <table class="calc-tbl" style="font-size:11px;">
+              <thead><tr><th>Cost line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th><th style="text-align:center;">Conf.</th></tr></thead>
+              <tbody>
+                <tr><td>People (14 Build × rate card<sup class="source-ref" data-src="s18">[18]</sup>)</td><td style="text-align:right;">3.5</td><td style="text-align:right;"><strong>4.4</strong></td><td style="text-align:right;">5.3</td><td style="text-align:center;"><span title="Range estimate — derived from rate card × Build FTE." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--lever-adj-soft);color:var(--lever-adj);cursor:help;">RANGE</span></td></tr>
+                <tr><td>Mobile dev tools &amp; cloud<sup class="source-ref" data-src="s20">[20]</sup></td><td style="text-align:right;">0.3</td><td style="text-align:right;"><strong>0.4</strong></td><td style="text-align:right;">0.5</td><td style="text-align:center;"><span title="Range estimate — App Store, TestFlight, mobile observability." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--lever-adj-soft);color:var(--lever-adj);cursor:help;">RANGE</span></td></tr>
+                <tr><td>Payment gateway pilot fees</td><td style="text-align:right;">0.3</td><td style="text-align:right;"><strong>0.4</strong></td><td style="text-align:right;">0.5</td><td style="text-align:center;"><span title="Range estimate — based on public per-transaction rates from Razorpay and Cashfree." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--lever-adj-soft);color:var(--lever-adj);cursor:help;">RANGE</span></td></tr>
+                <tr><td>PCI-DSS lite audit<sup class="source-ref" data-src="s23">[23]</sup></td><td style="text-align:right;">0.4</td><td style="text-align:right;"><strong>0.5</strong></td><td style="text-align:right;">0.6</td><td style="text-align:center;"><span title="To verify — actual audit quote requires firm RFP." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--amber-soft);color:var(--amber);cursor:help;">VERIFY</span></td></tr>
+                <tr><td>GTM launch (Tier-2/3 acquisition)</td><td style="text-align:right;">2.0</td><td style="text-align:right;"><strong>2.5</strong></td><td style="text-align:right;">3.5</td><td style="text-align:center;"><span title="To verify — largest non-people line; needs B2C-style spend in Tier-2/3 markets, genuinely uncertain at Year 1." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--amber-soft);color:var(--amber);cursor:help;">VERIFY</span></td></tr>
+                <tr><td>Support tooling</td><td style="text-align:right;">0.5</td><td style="text-align:right;"><strong>0.6</strong></td><td style="text-align:right;">0.8</td><td style="text-align:center;"><span title="Range estimate — higher volume, lower-touch support." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--lever-adj-soft);color:var(--lever-adj);cursor:help;">RANGE</span></td></tr>
+                <tr class="calc-total"><td><strong>Year-1 total</strong></td><td style="text-align:right;"><strong>7.0</strong></td><td style="text-align:right;"><strong>8.8</strong></td><td style="text-align:right;"><strong>11.2</strong></td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== AI COPILOT ===== -->
+    <div class="adj-rank-card" data-bldcard="ai">
+      <div class="adj-rank-head">
+        <div class="rank r4">4</div>
+        <div>
+          <div class="adj-rank-title serif">AI Copilot<small>16 Build · <span class="run-card-hdr" data-build="16">11</span> Run · ₹13.7 Cr Year-1 (Base) · heaviest</small></div>
+        </div>
+        <div class="adj-rank-stage">Build · In-house</div>
+        <div class="adj-rank-toggle">▾</div>
+      </div>
+      <div class="adj-rank-body">
+        <div class="adj-rank-body-inner" style="grid-template-columns:1fr 1fr;">
+          <div style="padding-top:16px;">
+            <div class="detail-h">Headcount build · hover any FTE for rationale</div>
+            <table class="calc-tbl" style="font-size:11px;">
+              <thead><tr><th>Function</th><th style="text-align:right;">Build</th><th style="text-align:right;">Run <span class="run-hdr-pct">(70%)</span></th></tr></thead>
+              <tbody>
+                <tr><td>PM</td><td style="text-align:right;cursor:help;" title="One PM with AI/ML product background — sequencing of features is the key skill.">1</td><td style="text-align:right;" data-runcell data-build="1">1</td></tr>
+                <tr><td>Engineering</td><td style="text-align:right;cursor:help;" title="Lower than FSA/Banking — AI Copilot rides on existing platform; focus on integration and tooling.">4</td><td style="text-align:right;" data-runcell data-build="4">3</td></tr>
+                <tr><td>Data/ML</td><td style="text-align:right;cursor:help;" title="Highest of all five: 3 for fine-tuning on Tally ledger corpus + 2 for inference optimisation and evals.">5</td><td style="text-align:right;" data-runcell data-build="5">4</td></tr>
+                <tr><td>Design</td><td style="text-align:right;cursor:help;" title="One designer for conversational UX — different discipline from form-based accounting UX.">1</td><td style="text-align:right;" data-runcell data-build="1">1</td></tr>
+                <tr><td>QA</td><td style="text-align:right;cursor:help;" title="Two QA — AI outputs require red-teaming and hallucination testing, not just feature QA.">2</td><td style="text-align:right;" data-runcell data-build="2">1</td></tr>
+                <tr><td>Sec/Compliance</td><td style="text-align:right;cursor:help;" title="One for DPDP data-residency (training data must stay in India) + AI governance.">1</td><td style="text-align:right;" data-runcell data-build="1">1</td></tr>
+                <tr><td>BD/Partnerships</td><td style="text-align:right;cursor:help;" title="One for LLM vendor relationships and model evaluation.">1</td><td style="text-align:right;" data-runcell data-build="1">1</td></tr>
+                <tr><td>Support/Ops</td><td style="text-align:right;cursor:help;" title="One for premium-tier support and feedback-loop curation for model improvement.">1</td><td style="text-align:right;" data-runcell data-build="1">1</td></tr>
+                <tr class="calc-total"><td><strong>Total</strong></td><td style="text-align:right;"><strong>16</strong></td><td style="text-align:right;"><strong data-runcell-total data-build="16">11</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="padding-top:16px;">
+            <div class="detail-h">Year-1 cost (₹ Cr) · hover for confidence &amp; rationale</div>
+            <table class="calc-tbl" style="font-size:11px;">
+              <thead><tr><th>Cost line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th><th style="text-align:center;">Conf.</th></tr></thead>
+              <tbody>
+                <tr><td>People (16 Build × rate card<sup class="source-ref" data-src="s18">[18]</sup>; ML-loaded)</td><td style="text-align:right;">4.6</td><td style="text-align:right;"><strong>5.8</strong></td><td style="text-align:right;">7.0</td><td style="text-align:center;"><span title="Range estimate — derived from rate card × Build FTE; ML compensation premium." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--lever-adj-soft);color:var(--lever-adj);cursor:help;">RANGE</span></td></tr>
+                <tr><td>GPU/inference cloud<sup class="source-ref" data-src="s20">[20]</sup></td><td style="text-align:right;">1.5</td><td style="text-align:right;"><strong>2.0</strong></td><td style="text-align:right;">2.8</td><td style="text-align:center;"><span title="Range estimate — highest cloud line of all five; flexes with cost loading toggle above." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--lever-adj-soft);color:var(--lever-adj);cursor:help;">RANGE</span></td></tr>
+                <tr><td>LLM API costs<sup class="source-ref" data-src="s21">[21]</sup></td><td style="text-align:right;">2.0</td><td style="text-align:right;"><strong>3.0</strong></td><td style="text-align:right;">4.5</td><td style="text-align:center;"><span title="Range estimate — Anthropic Claude + OpenAI GPT-4.1 list pricing × estimated request volume; high genuine uncertainty." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--lever-adj-soft);color:var(--lever-adj);cursor:help;">RANGE</span></td></tr>
+                <tr><td>DPDP + AI governance audit<sup class="source-ref" data-src="s23">[23]</sup></td><td style="text-align:right;">0.5</td><td style="text-align:right;"><strong>0.7</strong></td><td style="text-align:right;">0.9</td><td style="text-align:center;"><span title="To verify — actual audit quote requires firm RFP." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--amber-soft);color:var(--amber);cursor:help;">VERIFY</span></td></tr>
+                <tr><td>GTM launch</td><td style="text-align:right;">1.0</td><td style="text-align:right;"><strong>1.5</strong></td><td style="text-align:right;">2.0</td><td style="text-align:center;"><span title="To verify — premium positioning, channel strategy unconfirmed." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--amber-soft);color:var(--amber);cursor:help;">VERIFY</span></td></tr>
+                <tr><td>Support tooling (incl. feedback loop)</td><td style="text-align:right;">0.5</td><td style="text-align:right;"><strong>0.7</strong></td><td style="text-align:right;">0.9</td><td style="text-align:center;"><span title="Range estimate — includes feedback-loop tooling for model improvement." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--lever-adj-soft);color:var(--lever-adj);cursor:help;">RANGE</span></td></tr>
+                <tr class="calc-total"><td><strong>Year-1 total</strong></td><td style="text-align:right;"><strong>10.1</strong></td><td style="text-align:right;"><strong>13.7</strong></td><td style="text-align:right;"><strong>18.1</strong></td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== TAX ENGINE ===== -->
+    <div class="adj-rank-card" data-bldcard="tax">
+      <div class="adj-rank-head">
+        <div class="rank r5">5</div>
+        <div>
+          <div class="adj-rank-title serif">Tax engine<small>11 Build · <span class="run-card-hdr" data-build="11">8</span> Run · ₹7.0 Cr Year-1 (Base) · lightest</small></div>
+        </div>
+        <div class="adj-rank-stage">Build · In-house</div>
+        <div class="adj-rank-toggle">▾</div>
+      </div>
+      <div class="adj-rank-body">
+        <div class="adj-rank-body-inner" style="grid-template-columns:1fr 1fr;">
+          <div style="padding-top:16px;">
+            <div class="detail-h">Headcount build · hover any FTE for rationale</div>
+            <table class="calc-tbl" style="font-size:11px;">
+              <thead><tr><th>Function</th><th style="text-align:right;">Build</th><th style="text-align:right;">Run <span class="run-hdr-pct">(70%)</span></th></tr></thead>
+              <tbody>
+                <tr><td>PM</td><td style="text-align:right;cursor:help;" title="One PM with tax-tech background; multi-country regulatory product.">1</td><td style="text-align:right;" data-runcell data-build="1">1</td></tr>
+                <tr><td>Engineering</td><td style="text-align:right;cursor:help;" title="Four — leverages existing Tally GST architecture; effort is extension to UAE VAT, KSA ZATCA, Indonesia CoreTax.">4</td><td style="text-align:right;" data-runcell data-build="4">3</td></tr>
+                <tr><td>Data/ML</td><td style="text-align:right;cursor:help;" title="One for tax-rule classification and validation.">1</td><td style="text-align:right;" data-runcell data-build="1">1</td></tr>
+                <tr><td>Design</td><td style="text-align:right;cursor:help;" title="Half FTE — tax UI is mostly forms; lighter design need than FSA or Mobile POS.">0.5</td><td style="text-align:right;" data-runcell data-build="0.5">0.5</td></tr>
+                <tr><td>QA</td><td style="text-align:right;cursor:help;" title="Two QA — country-by-country validation against authoritative test data.">2</td><td style="text-align:right;" data-runcell data-build="2">1</td></tr>
+                <tr><td>Sec/Compliance</td><td style="text-align:right;cursor:help;" title="One — country tax certifications (ZATCA, Peppol ASP) are non-trivial regulatory exercises.">1</td><td style="text-align:right;" data-runcell data-build="1">1</td></tr>
+                <tr><td>BD/Partnerships</td><td style="text-align:right;cursor:help;" title="One for country accreditation bodies and Big-4 tax-firm partnerships.">1</td><td style="text-align:right;" data-runcell data-build="1">1</td></tr>
+                <tr><td>Support/Ops</td><td style="text-align:right;cursor:help;" title="Half FTE — premium customer base only; volume is low.">0.5</td><td style="text-align:right;" data-runcell data-build="0.5">0.5</td></tr>
+                <tr class="calc-total"><td><strong>Total</strong></td><td style="text-align:right;"><strong>11</strong></td><td style="text-align:right;"><strong data-runcell-total data-build="11">8</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="padding-top:16px;">
+            <div class="detail-h">Year-1 cost (₹ Cr) · hover for confidence &amp; rationale</div>
+            <table class="calc-tbl" style="font-size:11px;">
+              <thead><tr><th>Cost line</th><th style="text-align:right;">Low</th><th style="text-align:right;">Base</th><th style="text-align:right;">High</th><th style="text-align:center;">Conf.</th></tr></thead>
+              <tbody>
+                <tr><td>People (11 Build × rate card<sup class="source-ref" data-src="s18">[18]</sup>)</td><td style="text-align:right;">2.9</td><td style="text-align:right;"><strong>3.6</strong></td><td style="text-align:right;">4.3</td><td style="text-align:center;"><span title="Range estimate — derived from rate card × Build FTE." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--lever-adj-soft);color:var(--lever-adj);cursor:help;">RANGE</span></td></tr>
+                <tr><td>Tools &amp; cloud<sup class="source-ref" data-src="s20">[20]</sup></td><td style="text-align:right;">0.3</td><td style="text-align:right;"><strong>0.4</strong></td><td style="text-align:right;">0.5</td><td style="text-align:center;"><span title="Range estimate — typical Year-1 SaaS infrastructure spend." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--lever-adj-soft);color:var(--lever-adj);cursor:help;">RANGE</span></td></tr>
+                <tr><td>ZATCA + Peppol ASP licensing</td><td style="text-align:right;">0.5</td><td style="text-align:right;"><strong>0.8</strong></td><td style="text-align:right;">1.2</td><td style="text-align:center;"><span title="To verify — country licensing rates not publicly listed; require direct engagement with tax authorities and ASP intermediaries." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--amber-soft);color:var(--amber);cursor:help;">VERIFY</span></td></tr>
+                <tr><td>Country tax certifications<sup class="source-ref" data-src="s23">[23]</sup></td><td style="text-align:right;">0.5</td><td style="text-align:right;"><strong>0.8</strong></td><td style="text-align:right;">1.2</td><td style="text-align:center;"><span title="To verify — actual quote requires firm RFP for each country." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--amber-soft);color:var(--amber);cursor:help;">VERIFY</span></td></tr>
+                <tr><td>GTM launch (channel-led)</td><td style="text-align:right;">0.8</td><td style="text-align:right;"><strong>1.0</strong></td><td style="text-align:right;">1.3</td><td style="text-align:center;"><span title="To verify — channel-led in target geographies; partner economics unconfirmed." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--amber-soft);color:var(--amber);cursor:help;">VERIFY</span></td></tr>
+                <tr><td>Support tooling</td><td style="text-align:right;">0.3</td><td style="text-align:right;"><strong>0.4</strong></td><td style="text-align:right;">0.5</td><td style="text-align:center;"><span title="Range estimate — low volume, high-skill support." style="display:inline-block;font-size:8.5px;font-weight:700;padding:2px 5px;border-radius:3px;background:var(--lever-adj-soft);color:var(--lever-adj);cursor:help;">RANGE</span></td></tr>
+                <tr class="calc-total"><td><strong>Year-1 total</strong></td><td style="text-align:right;"><strong>5.3</strong></td><td style="text-align:right;"><strong>7.0</strong></td><td style="text-align:right;"><strong>9.0</strong></td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Methodology disclosure -->
+  <div class="collapsible-section" style="margin-top:22px;">
+    <div class="collapsible-head" onclick="this.parentElement.classList.toggle('open')">
+      <div class="collapsible-head-text">
+        <span class="collapsible-head-kick">⚙ Methodology</span>
+        <span class="collapsible-head-title">Sources, assumptions, and what this model does not assume · click to expand</span>
+      </div>
+      <span class="collapsible-head-toggle">▾</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+        <div class="detail-h">Compensation rate card (fully loaded, ₹ LPA)<sup class="source-ref" data-src="s18">[18]</sup></div>
+        <p class="detail-p">PM ₹40, Engineering blended ₹35, Data/ML ₹50, Design ₹30, QA ₹18, Sec/Compliance ₹40, BD/Partnerships ₹30, Support/Ops ₹15. Loading factor 1.30–1.40× over base CTC for benefits, infra, and overhead.</p>
+
+        <div class="detail-h">User-controllable assumptions</div>
+        <p class="detail-p"><strong>Run team as % of Build</strong> defaults to 70% with a 60–80% slider range<sup class="source-ref" data-src="s24">[24]</sup>. Indian SaaS product teams typically retain 60–75% of Build headcount once a product reaches steady state, accounting for reduced new-feature velocity offset by modest support-team growth. <strong>Cloud &amp; inference cost loading</strong> defaults to Base, with Conservative and Aggressive options re-basing AI Copilot's cloud + LLM API lines<sup class="source-ref" data-src="s20">[20]</sup><sup class="source-ref" data-src="s21">[21]</sup>; other adjacencies move only marginally on this toggle.</p>
+
+        <div class="detail-h">Non-people cost benchmarks</div>
+        <p class="detail-p">Cloud spend: ₹0.3–0.8 Cr Year-1 typical for non-AI SaaS team, ₹1.5–2.8 Cr for AI-heavy team<sup class="source-ref" data-src="s20">[20]</sup>. LLM API costs: based on Anthropic Claude Sonnet 4.5 (~$3/$15 per 1M input/output tokens) and OpenAI GPT-4.1 (~$2/$8 per 1M tokens) public list pricing<sup class="source-ref" data-src="s21">[21]</sup>; ₹2–4.5 Cr Year-1 envelope assumes low-millions of monthly active MSMEs with caching and prompt optimisation. AA TSP fees: ₹0.5–1.2 Cr Year-1 (TSP integration + per-consent transaction fees, not publicly listed)<sup class="source-ref" data-src="s22">[22]</sup>. Audit costs: SOC 2 Type II ₹15–25 L; ISO 27001 ₹10–18 L; PCI-DSS lite ₹8–15 L; country tax certifications ₹20–60 L each<sup class="source-ref" data-src="s23">[23]</sup>.</p>
+
+        <div class="detail-h">What this model does NOT assume</div>
+        <p class="detail-p">No inorganic build or M&amp;A; every FTE is hired in. No re-deployment from existing Tally org; every cost is incremental on top of the existing run rate. No revenue offset against Year-1 cost; this is a pure investment view, not NPV. No Year-2 productivity uplift from learning curve. The model is intentionally conservative on these four levers; relaxing any would reduce required investment.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- ============ END HEADCOUNT & INVESTMENT MODEL ============ -->
 </section>
 
 <!-- ============ 4. GEOGRAPHY ============ -->
@@ -3766,7 +4158,14 @@ const SOURCES = [
   {id:"s14", tier:1, metric:"SA 315 / SA 500 audit-trail standards", source:"Institute of Chartered Accountants of India (ICAI)", year:"2024", url:"https://www.icai.org/"},
   {id:"s15", tier:1, metric:"India MSME credit gap (₹20–25L Cr)", source:"IFC / World Bank · SME Finance Gap Report", year:"2024", url:"https://www.smefinanceforum.org/data-sites/msme-finance-gap"},
   {id:"s16", tier:2, metric:"Nasscom India SaaS landscape reports", source:"Nasscom · India SaaS Report", year:"2024", url:"https://nasscom.in/knowledge-center/publications"},
-  {id:"s17", tier:2, metric:"Zoho Corp global revenue $1.4 Bn (2024) up from $1.1 Bn (2023); Zoho India Finance suite ~50% growth (2023)", source:"Outlook Business / BW Businessworld / Latka · Zoho disclosures", year:"2024–2025", url:"https://www.outlookbusiness.com/start-up/news/zohos-finance-suite-sees-50-revenue-growth-in-india-introduces-key-feature-updates"}
+  {id:"s17", tier:2, metric:"Zoho Corp global revenue $1.4 Bn (2024) up from $1.1 Bn (2023); Zoho India Finance suite ~50% growth (2023)", source:"Outlook Business / BW Businessworld / Latka · Zoho disclosures", year:"2024–2025", url:"https://www.outlookbusiness.com/start-up/news/zohos-finance-suite-sees-50-revenue-growth-in-india-introduces-key-feature-updates"},{id:"s18", tier:3, metric:"Indian SaaS comp benchmarks: PM ₹40 LPA, Eng ₹35 LPA, Data/ML ₹50 LPA, Design ₹30 LPA, QA ₹18 LPA, Sec ₹40 LPA, BD ₹30 LPA, Support ₹15 LPA (fully loaded, 1.30–1.40× base CTC)", source:"AmbitionBox · Glassdoor India · Levels.fyi · Naukri Tech (consolidated) — Assumption to verify with Tally HR comp data", year:"2024–2025", url:"https://www.ambitionbox.com/salaries"},
+{id:"s19", tier:1, metric:"SaaS R&D-to-revenue benchmarks: Freshworks ~21% (FY24); Intuit ~19% (FY24)", source:"Freshworks Inc. & Intuit Inc. · SEC EDGAR 10-K filings", year:"2024", url:"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001819516&type=10-K"},
+{id:"s20", tier:3, metric:"Cloud spend per Year-1 SaaS product team: ₹0.3–0.8 Cr (non-AI); ₹1.5–2.8 Cr (AI-heavy GPU/inference)", source:"AWS / GCP / Azure public pricing — assumption at this granularity", year:"2025", url:"https://aws.amazon.com/pricing/"},
+{id:"s21", tier:1, metric:"LLM API list pricing — Anthropic Claude Sonnet 4.5 ($3/$15 per 1M tokens); OpenAI GPT-4.1 ($2/$8 per 1M tokens)", source:"Anthropic & OpenAI public pricing pages", year:"2025", url:"https://www.anthropic.com/pricing"},
+{id:"s22", tier:3, metric:"Account Aggregator TSP fees: ₹0.5–1.2 Cr Year-1 (TSP integration + per-consent transaction fees, not publicly listed)", source:"Decentro / Setu / Finvu — vendor case studies, indicative rates only — Assumption to verify via vendor RFP", year:"2024–2025", url:"https://decentro.tech/account-aggregator"},
+{id:"s23", tier:3, metric:"India audit cost benchmarks: SOC 2 Type II ₹15–25 L; ISO 27001 ₹10–18 L; PCI-DSS lite ₹8–15 L; country tax certifications ₹20–60 L each", source:"Big-4 / niche audit firm rate cards (consolidated) — Assumption to verify via audit RFP", year:"2024–2025", url:"https://www.icai.org/"},
+{id:"s24", tier:2, metric:"Run team = 70% of Build at steady state (default; user-adjustable 60–80% via slider)", source:"Bessemer Cloud Index + Nasscom SaaS report (consolidated norm) — Assumption", year:"2024", url:"https://www.bvp.com/atlas/state-of-the-cloud"},
+{id:"s25", tier:2, metric:"SaaS team-size, build-cycle, and Run-vs-Build (~70%) benchmarks; Indian SaaS B2B finance MVPs typically ship in 9–14 months", source:"Bessemer Venture Partners · State of the Cloud / Cloud Index", year:"2024", url:"https://www.bvp.com/atlas/state-of-the-cloud"}
 ];
 
 /* ============ RANKED ADJACENCY EXPAND/COLLAPSE ============ */
@@ -3925,7 +4324,96 @@ updateActiveNav();
   // Initial
   applyScen('base');
 })();
+/* ============ HEADCOUNT MODEL · run% slider + cost loading toggle ============ */
+(function(){
+  var slider = document.getElementById('runPctSlider');
+  if(!slider) return;
 
+  var valDisplay = document.getElementById('runPctVal');
+  var hdrPct = document.getElementById('runHdrPct');
+
+  function updateRun(){
+    var pct = parseInt(slider.value, 10);
+    valDisplay.textContent = pct + '%';
+    if(hdrPct) hdrPct.textContent = '(' + pct + '%)';
+
+    // Roll-up table per-row Run FTE
+    var totalRun = 0;
+    document.querySelectorAll('#hcRollupBody tr[data-adj]').forEach(function(row){
+      var build = parseInt(row.getAttribute('data-build'), 10);
+      var run = Math.round(build * pct / 100);
+      var cell = row.querySelector('.run-fte');
+      if(cell) cell.textContent = run;
+      totalRun += run;
+    });
+    var totEl = document.querySelector('.run-fte-total');
+    if(totEl) totEl.textContent = totalRun;
+
+    // Per-card function rows
+    document.querySelectorAll('[data-runcell]').forEach(function(cell){
+      var build = parseFloat(cell.getAttribute('data-build'));
+      var run = build * pct / 100;
+      cell.textContent = run % 1 === 0 ? run : run.toFixed(1);
+    });
+
+    // Per-card totals
+    document.querySelectorAll('[data-runcell-total]').forEach(function(cell){
+      var build = parseFloat(cell.getAttribute('data-build'));
+      cell.textContent = Math.round(build * pct / 100);
+    });
+
+    // Per-card header summaries
+    document.querySelectorAll('.run-card-hdr').forEach(function(cell){
+      var build = parseFloat(cell.getAttribute('data-build'));
+      cell.textContent = Math.round(build * pct / 100);
+    });
+
+    // All "Run (X%)" labels in card sub-tables
+    document.querySelectorAll('.run-hdr-pct').forEach(function(s){
+      s.textContent = '(' + pct + '%)';
+    });
+  }
+
+  slider.addEventListener('input', updateRun);
+
+  // Cost loading toggle
+  var toggle = document.getElementById('costLoadingToggle');
+  if(toggle){
+    var btns = toggle.querySelectorAll('.cost-toggle-btn');
+    btns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var loading = btn.getAttribute('data-loading');
+
+        btns.forEach(function(b){
+          var on = b === btn;
+          b.classList.toggle('active', on);
+          b.style.background = on ? 'var(--navy)' : 'transparent';
+          b.style.color = on ? '#fff' : 'var(--mute)';
+        });
+
+        var totalLow = 0, totalBase = 0, totalHigh = 0;
+        document.querySelectorAll('#hcRollupBody tr[data-adj]').forEach(function(row){
+          var lowVal = parseFloat(row.getAttribute('data-' + loading + '-l'));
+          var baseVal = parseFloat(row.getAttribute('data-' + loading + '-b'));
+          var highVal = parseFloat(row.getAttribute('data-' + loading + '-h'));
+
+          row.querySelector('.cost-low').textContent = lowVal.toFixed(1);
+          row.querySelector('.cost-base').innerHTML = '<strong>' + baseVal.toFixed(1) + '</strong>';
+          row.querySelector('.cost-high').textContent = highVal.toFixed(1);
+
+          totalLow += lowVal;
+          totalBase += baseVal;
+          totalHigh += highVal;
+        });
+
+        document.querySelector('.cost-low-total').textContent = totalLow.toFixed(1);
+        document.querySelector('.cost-base-total').textContent = totalBase.toFixed(1);
+        document.querySelector('.cost-high-total').textContent = totalHigh.toFixed(1);
+      });
+    });
+  }
+})();
+  
 </script>
 
 
